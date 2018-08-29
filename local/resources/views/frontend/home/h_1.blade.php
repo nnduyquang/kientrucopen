@@ -126,8 +126,8 @@
                 <div class="btn-instro mb-3 mt-3 wow bounceInDown slow"><a href="{{URL::asset('gioi-thieu')}}">XEM CHI TIẾT</a></div>
             </div>
             <div class="col-md-6 wow fadeIn slower">
-                <div id="img_aboutus" style="background-image: url({{URL::asset("images/4-3-700x466.jpg")}});">
-                    <div class="img-bg"></div>
+                <div id="img_aboutus">
+                    <div class="img-bg"  style="background-image: url({{URL::asset("images/4-3-700x466.jpg")}});"></div>
                     <p class="p-0">WHO WE ARE</p>
                 </div>
             </div>

@@ -27,5 +27,5 @@
 @stop
 
 @section('jv-scripts')
-    
+
 @stop
