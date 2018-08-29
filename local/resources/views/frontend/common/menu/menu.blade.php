@@ -68,7 +68,7 @@
             <div class="col-6 menu-right text-right">
                 <ul>
                     <li><a class="{{ request()->is('/') ? 'active' : '/' }}" href="{{URL::asset('/')}}">TRANG CHỦ </a></li>
-                    <li><a class="{{ request()->is('du-an') ? 'active' : '/' }}" href="{{URL::asset('/du-an')}}">DỰ ÁN </a></li>
+                    <li><a class="{{ request()->is('*du-an*') ? 'active' : '/' }}" href="{{URL::asset('/du-an')}}">DỰ ÁN </a></li>
                     <li><a class="{{ request()->is('gioi-thieu') ? 'active' : '/' }}" href="{{URL::asset('/gioi-thieu')}}">GIỚI THIỆU </a></li>
                     <li><a class="{{ request()->is('lien-he') ? 'active' : '/' }}" href="{{URL::asset('/lien-he')}}">LIÊN HỆ </a></li>
                     <li><a href=""><i class="fas fa-bars"></i></a></li>
