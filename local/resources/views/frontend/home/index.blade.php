@@ -1,9 +1,9 @@
 @extends('frontend.master')
 @section('title')
-    Nội Thất
+    KIẾN TRÚC DECOROPEN
 @stop
 @section('description')
-    Nội Thất
+    KIẾN TRÚC DECOROPEN
 @stop
 @section('keyword')
 
@@ -16,10 +16,23 @@
 @stop
 @section('styles')
     {{ Html::style('css/themes/default/default.css') }}
+    {{ Html::style('css/slider.css') }}
+    {{ Html::style('css/fe_h_index.css') }}
 @stop
 @section('slider')
     @include('frontend.common.slider')
+
 @stop
 @section('container')
-    hello
+    @include('frontend.home.h_1')
+    @include('frontend.home.h_2')
+    @include('frontend.home.h_3')
+    @include('frontend.home.h_5')
+    @include('frontend.home.h_6')
+    @include('frontend.common.partner')
+@stop
+
+@section('jv-scripts')
+    {{ Html::script('js/fe.h.index.js') }}
+    {{ Html::script('js/fe.common.partner.js') }}
 @stop

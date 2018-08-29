@@ -1,0 +1,144 @@
+#d_1 {
+  background-color: #212121;
+  padding-top: 68px;
+  padding-bottom: 68px;
+  color: white;
+}
+
+#d_1 h3 {
+  position: relative;
+  font-size: 22px;
+}
+
+#d_1 h3 span {
+  /*font-size: 26px;*/
+  color: #edb50c;
+}
+
+#d_1 #post_lq .tag-lienquan {
+  float: left;
+  margin: 3px 5px;
+  /*border: 2px solid white;*/
+  border-radius: 20px;
+  /*padding: 10px 0px;*/
+}
+
+#d_1 #post_lq .tag-lienquan a {
+  color: white;
+  font-size: 13px;
+  padding: 16px 5px;
+  position: relative;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#d_1 #post_lq .tag-lienquan a:hover {
+  color: #edb50c;
+}
+
+#d_1 #post_lq .tag-lienquan a:before {
+  content: '#';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: -3px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #edb50c;
+  font-size: 12px;
+  font-style: normal;
+}
+
+#d_1 #post_lq p {
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+#d_1 #post_lq h5 {
+  padding-left: 20px;
+  font-size: 15px;
+  padding-bottom: 6px;
+}
+
+#d_1 #post_lq h5 a {
+  color: #edb50c;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#d_1 #post_lq h5 a:hover {
+  color: #b6a338;
+}
+
+#d_1 #post_lq .over-lay {
+  width: 108px;
+  height: 68px;
+  border: 3px solid whitesmoke;
+  position: relative;
+  /*overflow: hidden;*/
+}
+
+#d_1 #post_lq .over-lay:hover .img-overlay {
+  top: 0;
+  left: 0;
+}
+
+#d_1 #post_lq .over-lay .img-overlay {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  z-index: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#d_1 #post_lq h3:before {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 38px;
+  -webkit-transform: skewX(25deg);
+          transform: skewX(25deg);
+  background-color: #edb50c;
+  bottom: -10px;
+}
+
+#d_1 #post_lq h3:after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 68px;
+  -webkit-transform: skewX(25deg);
+          transform: skewX(25deg);
+  background-color: white;
+  bottom: -10px;
+  left: 42px;
+}
+
+#d_1 span.sm-title {
+  font-size: 13px;
+  color: #b3b2ae;
+}
+
+#d_1 p {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#d_1 p span {
+  color: #edb50c;
+}
+
+#d_1 #owl_project .owl-items {
+  width: 208px;
+  height: 138px;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+  margin: auto;
+}

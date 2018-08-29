@@ -51,7 +51,16 @@ mix
 
     .sass('resources/assets/sass/frontend.scss', '../css/frontend.css').options({processCssUrls: false})
     .sass('resources/assets/sass/backend.scss', '../css/backend.css')
+    .sass('resources/assets/sass/slider.scss', '../css/slider.css')
+    .sass('resources/assets/sass/frontend/home/index.scss', '../css/fe_h_index.css')
+    .sass('resources/assets/sass/frontend/project/index.scss', '../css/fe_p_index.css')
+    .sass('resources/assets/sass/frontend/about-us/index.scss', '../css/fe_a_index.css')
+    .sass('resources/assets/sass/frontend/contact/index.scss', '../css/fe_c_index.css')
+    .sass('resources/assets/sass/frontend/details/index.scss', '../css/fe_d_index.css')
     .styles('resources/assets/js/scripts.js', '../js/scripts.js')
+    .styles('resources/assets/js/fe.h.index.js', '../js/fe.h.index.js')
+    .styles('resources/assets/js/fe.common.partner.js', '../js/fe.common.partner.js')
+    .styles('resources/assets/js/fe.details.js', '../js/fe.details.js')
     .styles([
         'resources/assets/sass/login1.scss',
     ], '../css/login.css')

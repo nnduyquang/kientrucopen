@@ -1,0 +1,58 @@
+
+#h_2 {
+background-position: center center;
+-webkit-background-size: cover;
+background-size: cover;
+position: relative;
+background-attachment: fixed;
+#h_2_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(237, 213, 49, 0.93);
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+h3 {
+  padding-top: 58px;
+  padding-bottom: 58px;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: 'Sawarabi Gothic', sans-serif;
+  /*font-family: 'Lalezar', cursive;*/
+  color: white;
+}
+
+  div{
+    a {
+      font-size: 23px;
+      color: white;
+      /*font-weight: 600;*/
+      span {
+        font-family: 'Lalezar', cursive;
+        font-size: 32px;
+      }
+    }
+    .btn-call {
+      border: 2px solid white;
+      padding: 10px 20px 8px 20px;
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 800px) {
+  #h_2 h3 {
+    padding-bottom: 38px;
+    padding-top: 38px;
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  #h_2 div.btn-call {
+    margin-bottom: 38px;
+  }
+
+}
