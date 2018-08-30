@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 13, 2018 lúc 12:22 PM
+-- Thời gian đã tạo: Th8 30, 2018 lúc 12:14 PM
 -- Phiên bản máy phục vụ: 10.1.31-MariaDB
 -- Phiên bản PHP: 7.0.29
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `startproject`
+-- Cơ sở dữ liệu: `opendesign`
 --
 
 -- --------------------------------------------------------
@@ -50,11 +50,16 @@ CREATE TABLE `category_items` (
 --
 
 INSERT INTO `category_items` (`id`, `name`, `path`, `description`, `image`, `image_mobile`, `level`, `parent_id`, `type`, `order`, `isActive`, `created_at`, `updated_at`, `seo_id`) VALUES
-(1, 'Test 1', 'test-1', '<p>\r\n	Test 1\r\n</p>', 'images/uploads/images/gt_1.jpg', NULL, 0, NULL, 0, 1, 1, '2018-07-17 02:13:46', '2018-07-17 02:13:46', 1),
-(2, 'Test 2', 'test-2', '<p>\r\n	Test 2\r\n</p>', 'images/uploads/images/gt_1.jpg', NULL, 0, NULL, 0, 2, 1, '2018-07-17 02:14:03', '2018-07-17 02:14:03', 2),
-(3, 'Test 3', 'test-3', '<p>\r\n	Test 3\r\n</p>', 'images/uploads/images/gt_1.jpg', NULL, 0, NULL, 0, 3, 1, '2018-07-17 02:14:21', '2018-07-17 02:14:21', 3),
 (4, 'test1-1', 'test1-1', '<p>\r\n	test1-1\r\n</p>', 'images/uploads/images/gt_1.jpg', NULL, 1, 1, 0, 5, 1, '2018-07-17 02:24:13', '2018-07-17 02:24:13', 4),
-(5, 'test 5', 'test-5', '<p>\r\n	test 5\r\n</p>', 'images/uploads/images/gt_1.jpg', NULL, 0, NULL, 0, 5, 1, '2018-07-17 02:32:23', '2018-07-17 02:32:23', 5);
+(6, 'Dự Án', 'du-an', NULL, '0', NULL, 0, NULL, 0, 1, 1, '2018-08-30 02:35:56', '2018-08-30 02:35:56', 9),
+(7, 'Coffee Shop', 'coffee-shop', NULL, '0', NULL, 1, 6, 0, 1, 1, '2018-08-30 02:37:12', '2018-08-30 02:37:12', 10),
+(8, 'Homestay', 'homestay', NULL, '0', NULL, 1, 6, 0, 1, 1, '2018-08-30 02:37:27', '2018-08-30 02:37:27', 11),
+(9, 'Khách Sạn', 'khach-san', NULL, 'http://localhost:8080/opendesign/', NULL, 1, 6, 0, 1, 1, '2018-08-30 02:37:35', '2018-08-30 02:37:49', 12),
+(10, 'Nhà Phố', 'nha-pho', NULL, 'http://localhost:8080/opendesign/', NULL, 1, 6, 0, 1, 1, '2018-08-30 02:37:58', '2018-08-30 02:38:04', 13),
+(11, 'Nội Thất Nhà Ở', 'noi-that-nha-o', NULL, 'http://localhost:8080/opendesign/', NULL, 1, 6, 0, 1, 1, '2018-08-30 02:38:17', '2018-08-30 02:38:22', 14),
+(12, 'Shop', 'shop', NULL, '0', NULL, 1, 6, 0, 1, 1, '2018-08-30 02:38:33', '2018-08-30 02:38:33', 15),
+(13, 'Villa', 'villa', NULL, '0', NULL, 1, 6, 0, 1, 1, '2018-08-30 02:38:45', '2018-08-30 02:38:45', 16),
+(14, 'Tiệm Nail', 'tiem-nail', NULL, '0', NULL, 1, 6, 0, 1, 1, '2018-08-30 03:46:33', '2018-08-30 03:46:33', 24);
 
 -- --------------------------------------------------------
 
@@ -74,9 +79,24 @@ CREATE TABLE `category_many` (
 --
 
 INSERT INTO `category_many` (`category_id`, `item_id`, `created_at`, `updated_at`) VALUES
-(1, 1, '2018-07-17 03:18:34', '2018-07-17 03:18:34'),
-(2, 1, '2018-07-17 04:25:46', '2018-07-17 04:25:46'),
-(5, 1, '2018-07-17 04:08:02', '2018-07-17 04:08:02');
+(6, 3, '2018-08-30 03:53:08', '2018-08-30 03:53:08'),
+(6, 4, '2018-08-30 03:52:59', '2018-08-30 03:52:59'),
+(6, 5, '2018-08-30 03:52:47', '2018-08-30 03:52:47'),
+(6, 6, '2018-08-30 03:52:40', '2018-08-30 03:52:40'),
+(6, 7, '2018-08-30 03:52:30', '2018-08-30 03:52:30'),
+(6, 8, '2018-08-30 03:52:24', '2018-08-30 03:52:24'),
+(6, 9, '2018-08-30 03:52:17', '2018-08-30 03:52:17'),
+(6, 10, '2018-08-30 03:52:10', '2018-08-30 03:52:10'),
+(6, 11, '2018-08-30 03:52:00', '2018-08-30 03:52:00'),
+(8, 4, '2018-08-30 02:55:50', '2018-08-30 02:55:50'),
+(9, 3, '2018-08-30 02:40:11', '2018-08-30 02:40:11'),
+(9, 5, '2018-08-30 03:17:22', '2018-08-30 03:17:22'),
+(10, 6, '2018-08-30 03:20:13', '2018-08-30 03:20:13'),
+(10, 7, '2018-08-30 03:25:55', '2018-08-30 03:25:55'),
+(11, 8, '2018-08-30 03:29:07', '2018-08-30 03:29:07'),
+(11, 9, '2018-08-30 03:40:36', '2018-08-30 03:40:36'),
+(13, 11, '2018-08-30 03:52:00', '2018-08-30 03:52:00'),
+(14, 10, '2018-08-30 03:49:14', '2018-08-30 03:49:14');
 
 -- --------------------------------------------------------
 
@@ -317,8 +337,16 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `path`, `description`, `content`, `image`, `post_type`, `isActive`, `category_item_id`, `user_id`, `created_at`, `updated_at`, `seo_id`) VALUES
-(1, 'test bài viết', 'test-bai-viet', '<p>\r\n	test bài viết\r\n</p>', '<p>\r\n	test bài viết\r\n</p>', 'images/uploads/images/gt_1.jpg', 1, 1, NULL, 1, '2018-07-17 03:18:34', '2018-07-17 03:18:34', 7),
-(2, 'Giới Thiệu', 'gioi-thieu', '<p>\r\n	Giới Thiệu\r\n</p>', '<p>\r\n	Giới Thiệu\r\n</p>', '0', 0, 1, NULL, 1, '2018-08-13 03:00:05', '2018-08-13 03:00:05', 8);
+(2, 'Giới Thiệu', 'gioi-thieu', '<p>\r\n	Giới Thiệu\r\n</p>', '<p>\r\n	Giới Thiệu\r\n</p>', '0', 0, 1, NULL, 1, '2018-08-13 03:00:05', '2018-08-13 03:00:05', 8),
+(3, 'Khách Sạn Mini Đà Nẵng', 'khach-san-mini-da-nang', '<p>\r\n	Khách Sạn Mini Đà Nẵng\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/khachsan/khachsan_mini_danang.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/khachsan/khachsan_mini_danang.jpg', 1, 1, NULL, 1, '2018-08-30 02:40:11', '2018-08-30 03:02:03', 17),
+(4, 'Homestay Hội An', 'homestay-hoi-an', '<p>\r\n	Homestay Hội An\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/homestay/homestay_hoian.jpg', 1, 1, NULL, 1, '2018-08-30 02:55:49', '2018-08-30 02:55:49', 18),
+(5, 'Khách Sạn Mini', 'khach-san-mini', '<p>\r\n	Khách Sạn Mini\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/khachsan/khachsan_mini.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/khachsan/khachsan_mini.jpg', 1, 1, NULL, 1, '2018-08-30 03:17:22', '2018-08-30 03:17:22', 19),
+(6, 'Nhà Phố 3 Tầng 5x20m', 'nha-pho-3-tang-5x20m', '<p>\r\n	Nhà Phố 3 Tầng 5x20m\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/nhapho/nhapho_3_tang_5x20_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:20:13', '2018-08-30 03:20:13', 20),
+(7, 'Nhà Phố 3.7m x 15m', 'nha-pho-37m-x-15m', '<p>\r\n	Nhà Phố 3.7m x 15m\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_2.jpg\" style=\"width: 80%; height: 80%;\"><img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>', 'images/uploads/images/nhapho/nhapho_3m7x15m_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:25:55', '2018-08-30 03:25:55', 21),
+(8, 'Phòng Ngủ Mộc', 'phong-ngu-moc', '<p>\r\n	Phòng Ngủ Mộc\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_4.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/noithatnhao/phongngu_moc_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:29:07', '2018-08-30 03:29:07', 22),
+(9, 'Nội Thất Nhà Phố 3.7m x 14m', 'noi-that-nha-pho-37m-x-14m', '<p>\r\n	Nội Thất Nhà Phố 3.7m x 14m\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_4.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_5.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_6.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_7.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_8.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>', 'images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:40:36', '2018-08-30 03:40:36', 23),
+(10, 'Nail Minh Thiên Đà Nẵng', 'nail-minh-thien-da-nang', '<p>\r\n	Nail Minh Thiên Đà Nẵng\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_4.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/nail/nail_minh_thien_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:49:14', '2018-08-30 03:49:14', 25),
+(11, 'Villa Hội An', 'villa-hoi-an', '<p>\r\n	Villa Hội An\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_4.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/villa/villa_hoian_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:52:00', '2018-08-30 03:52:00', 26);
 
 -- --------------------------------------------------------
 
@@ -407,14 +435,27 @@ CREATE TABLE `seos` (
 --
 
 INSERT INTO `seos` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `seo_image`, `created_at`, `updated_at`) VALUES
-(1, 'Test 1', 'Test 1', 'Test 1', '', '2018-07-17 02:13:46', '2018-07-17 02:13:46'),
-(2, 'Test 2', 'Test 2', 'Test 2', '', '2018-07-17 02:14:03', '2018-07-17 02:14:03'),
-(3, 'Test 3', 'Test 3', 'Test 3', '', '2018-07-17 02:14:21', '2018-07-17 02:14:21'),
 (4, 'test1-1', 'test1-1', 'test1,1', '', '2018-07-17 02:24:13', '2018-07-17 02:24:13'),
-(5, 'test 5', 'test 5', 'test 5', '', '2018-07-17 02:32:23', '2018-07-17 02:32:23'),
 (6, 'test bài viết', 'test bài viết', 'test bài viết', '', '2018-07-17 03:13:47', '2018-07-17 03:13:47'),
-(7, 'test bài viết', 'test bài viết', 'test bài viết', 'images/uploads/images/gt_1.jpg', '2018-07-17 03:18:34', '2018-08-13 08:08:38'),
-(8, NULL, NULL, NULL, '', '2018-08-13 03:00:05', '2018-08-13 03:00:05');
+(8, NULL, NULL, NULL, '', '2018-08-13 03:00:05', '2018-08-13 03:00:05'),
+(9, NULL, NULL, NULL, NULL, '2018-08-30 02:35:56', '2018-08-30 02:35:56'),
+(10, NULL, NULL, NULL, NULL, '2018-08-30 02:37:12', '2018-08-30 02:37:12'),
+(11, NULL, NULL, NULL, NULL, '2018-08-30 02:37:27', '2018-08-30 02:37:27'),
+(12, NULL, NULL, NULL, NULL, '2018-08-30 02:37:35', '2018-08-30 02:37:35'),
+(13, NULL, NULL, NULL, NULL, '2018-08-30 02:37:58', '2018-08-30 02:37:58'),
+(14, NULL, NULL, NULL, NULL, '2018-08-30 02:38:17', '2018-08-30 02:38:17'),
+(15, NULL, NULL, NULL, NULL, '2018-08-30 02:38:33', '2018-08-30 02:38:33'),
+(16, NULL, NULL, NULL, NULL, '2018-08-30 02:38:45', '2018-08-30 02:38:45'),
+(17, NULL, NULL, NULL, 'images/uploads/images/khachsan/khachsan_mini_danang.jpg', '2018-08-30 02:40:11', '2018-08-30 03:02:03'),
+(18, NULL, NULL, NULL, 'images/uploads/images/homestay/homestay_hoian.jpg', '2018-08-30 02:55:49', '2018-08-30 02:55:49'),
+(19, NULL, NULL, NULL, 'images/uploads/images/khachsan/khachsan_mini.jpg', '2018-08-30 03:17:22', '2018-08-30 03:17:22'),
+(20, NULL, NULL, NULL, 'images/uploads/images/nhapho/nhapho_3_tang_5x20_1.jpg', '2018-08-30 03:20:13', '2018-08-30 03:20:13'),
+(21, NULL, NULL, NULL, 'images/uploads/images/nhapho/nhapho_3m7x15m_1.jpg', '2018-08-30 03:25:55', '2018-08-30 03:25:55'),
+(22, NULL, NULL, NULL, 'images/uploads/images/noithatnhao/phongngu_moc_1.jpg', '2018-08-30 03:29:07', '2018-08-30 03:29:07'),
+(23, NULL, NULL, NULL, 'images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_1.jpg', '2018-08-30 03:40:36', '2018-08-30 03:40:36'),
+(24, NULL, NULL, NULL, NULL, '2018-08-30 03:46:33', '2018-08-30 03:46:33'),
+(25, NULL, NULL, NULL, 'images/uploads/images/nail/nail_minh_thien_1.jpg', '2018-08-30 03:49:14', '2018-08-30 03:49:14'),
+(26, NULL, NULL, NULL, 'images/uploads/images/villa/villa_hoian_1.jpg', '2018-08-30 03:52:00', '2018-08-30 03:52:00');
 
 -- --------------------------------------------------------
 
@@ -555,7 +596,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `category_items`
 --
 ALTER TABLE `category_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `category_permissions`
@@ -591,7 +632,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
@@ -609,7 +650,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT cho bảng `seos`
 --
 ALTER TABLE `seos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
