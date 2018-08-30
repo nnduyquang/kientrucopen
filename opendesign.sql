@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 30, 2018 lúc 12:14 PM
--- Phiên bản máy phục vụ: 10.1.31-MariaDB
--- Phiên bản PHP: 7.0.29
+-- Host: 127.0.0.1
+-- Generation Time: Aug 31, 2018 at 01:33 AM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `opendesign`
+-- Database: `opendesign`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_items`
+-- Table structure for table `category_items`
 --
 
 CREATE TABLE `category_items` (
@@ -46,7 +44,7 @@ CREATE TABLE `category_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_items`
+-- Dumping data for table `category_items`
 --
 
 INSERT INTO `category_items` (`id`, `name`, `path`, `description`, `image`, `image_mobile`, `level`, `parent_id`, `type`, `order`, `isActive`, `created_at`, `updated_at`, `seo_id`) VALUES
@@ -64,7 +62,7 @@ INSERT INTO `category_items` (`id`, `name`, `path`, `description`, `image`, `ima
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_many`
+-- Table structure for table `category_many`
 --
 
 CREATE TABLE `category_many` (
@@ -75,7 +73,7 @@ CREATE TABLE `category_many` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_many`
+-- Dumping data for table `category_many`
 --
 
 INSERT INTO `category_many` (`category_id`, `item_id`, `created_at`, `updated_at`) VALUES
@@ -101,7 +99,7 @@ INSERT INTO `category_many` (`category_id`, `item_id`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_permissions`
+-- Table structure for table `category_permissions`
 --
 
 CREATE TABLE `category_permissions` (
@@ -112,7 +110,7 @@ CREATE TABLE `category_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_permissions`
+-- Dumping data for table `category_permissions`
 --
 
 INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -126,7 +124,7 @@ INSERT INTO `category_permissions` (`id`, `name`, `created_at`, `updated_at`) VA
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `configs`
+-- Table structure for table `configs`
 --
 
 CREATE TABLE `configs` (
@@ -141,18 +139,18 @@ CREATE TABLE `configs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `configs`
+-- Dumping data for table `configs`
 --
 
 INSERT INTO `configs` (`id`, `name`, `content`, `description`, `order`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'config-contact', '<p style=\"text-align: center;\">\r\n	<span style=\"color:#ffffff;\"><strong><em>Hotline hỗ trợ tư vấn và phản hồi ý kiến</em></strong><em>:&nbsp;</em></span>\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<span style=\"color:#ffffff;\"><strong><em>Hân hạnh được phục vụ quý khách hàng.!</em></strong></span>\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<span style=\"color:#ffffff;\"><strong><em>157 Nguyễn Thượng Hiền, P.6 Quận Bình Thạnh, TPHCM</em></strong></span>\r\n</p>\r\n\r\n<p>\r\n	&nbsp;\r\n</p>', NULL, 3, 1, NULL, '2018-08-08 15:10:24'),
+(1, 'config-contact', '<p style="text-align: center;">\r\n	<span style="color:#ffffff;"><strong><em>Hotline hỗ trợ tư vấn và phản hồi ý kiến</em></strong><em>:&nbsp;</em></span>\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<span style="color:#ffffff;"><strong><em>Hân hạnh được phục vụ quý khách hàng.!</em></strong></span>\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<span style="color:#ffffff;"><strong><em>157 Nguyễn Thượng Hiền, P.6 Quận Bình Thạnh, TPHCM</em></strong></span>\r\n</p>\r\n\r\n<p>\r\n	&nbsp;\r\n</p>', NULL, 3, 1, NULL, '2018-08-08 15:10:24'),
 (3, 'email-receive', 'trangnh.sml@gmail.com', 'Cấu Hình Email Nhận Báo Giá', 1, 1, '2017-08-26 06:53:20', '2018-08-08 07:40:29'),
 (4, 'email-sender-subject', 'Re: Thông Tin Ứng Tuyển', 'Cấu Hình Subject Gửi Khách Hàng', 2, 1, '2017-08-26 06:53:20', '2018-08-08 07:40:30'),
 (5, 'email-sender-from', 'Thông Tin Ứng Tuyển Tuấn 123', 'Cấu Hình From Gửi Khách Hàng', 3, 1, '2017-08-26 06:53:21', '2018-08-08 07:40:30'),
 (6, 'email-receive-subject', 'Thông Tin Ứng Tuyển Từ Ứng Viên', 'Cấu Hình Subject Nhận Báo Giá', 4, 1, '2017-08-26 06:53:21', '2018-08-08 07:40:30'),
 (7, 'email-receive-from', 'Thông Tin Ứng Tuyển Từ Ứng Viên', 'Cấu Hình From Nhận Báo Giá', 5, 1, '2017-08-26 06:53:21', '2018-08-08 07:40:30'),
 (8, 'email-signatures', '', 'Cấu Hình Chữ Ký', 7, 1, '2017-08-26 06:53:21', '2018-05-11 10:13:42'),
-(9, 'email-sender-content', '<h1 style=\"margin-left:0cm; margin-right:0cm\">\r\n	<span style=\"font-size:24pt\">Chúng tôi đã nhận được mail, mọi thông tin về ứng tuyển sẽ được phản hồi trong vòng 24h. Xin cảm ơn!</span>\r\n</h1>', 'Cấu Hình Nội Dung Gửi Khách Hàng', 6, 1, '2017-08-26 06:53:21', '2018-08-08 07:40:30'),
+(9, 'email-sender-content', '<h1 style="margin-left:0cm; margin-right:0cm">\r\n	<span style="font-size:24pt">Chúng tôi đã nhận được mail, mọi thông tin về ứng tuyển sẽ được phản hồi trong vòng 24h. Xin cảm ơn!</span>\r\n</h1>', 'Cấu Hình Nội Dung Gửi Khách Hàng', 6, 1, '2017-08-26 06:53:21', '2018-08-08 07:40:30'),
 (13, 'config-phone', '0984.929.097', NULL, 2, 1, NULL, '2018-08-08 15:10:24'),
 (14, 'config-email', 'congtycophantuan123@gmail.com', NULL, 8, 1, NULL, '2018-08-08 15:10:24'),
 (15, 'config-address', '202B Hoàng Văn Thụ Phường 9 Quận Phú Nhuận TP.HCM', NULL, 9, 1, NULL, '2018-08-08 15:10:24'),
@@ -163,12 +161,13 @@ INSERT INTO `configs` (`id`, `name`, `content`, `description`, `order`, `user_id
 (22, 'config-seo-description', 'asdas', NULL, 11, 1, NULL, '2018-08-13 07:52:08'),
 (23, 'config-seo-keywords', 'qwe,sadasd', NULL, 12, 1, NULL, '2018-08-13 07:52:08'),
 (24, 'config-seo-image', 'images/uploads/images/gt_1.jpg', NULL, 13, 1, NULL, '2018-08-13 07:52:08'),
-(25, 'config-favicon', NULL, NULL, 14, 1, NULL, NULL);
+(25, 'config-favicon', NULL, NULL, 14, 1, NULL, NULL),
+(26, 'config-slider', '', NULL, 2, 1, NULL, '2018-08-30 14:30:23');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `menus`
+-- Table structure for table `menus`
 --
 
 CREATE TABLE `menus` (
@@ -188,7 +187,7 @@ CREATE TABLE `menus` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -198,7 +197,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -214,7 +213,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -226,7 +225,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `permissions`
+-- Table structure for table `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -240,7 +239,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `permissions`
+-- Dumping data for table `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `category_permission_id`, `created_at`, `updated_at`) VALUES
@@ -272,7 +271,7 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `categor
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `permission_role`
+-- Table structure for table `permission_role`
 --
 
 CREATE TABLE `permission_role` (
@@ -281,7 +280,7 @@ CREATE TABLE `permission_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `permission_role`
+-- Dumping data for table `permission_role`
 --
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
@@ -313,7 +312,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `posts`
+-- Table structure for table `posts`
 --
 
 CREATE TABLE `posts` (
@@ -333,25 +332,25 @@ CREATE TABLE `posts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `posts`
+-- Dumping data for table `posts`
 --
 
 INSERT INTO `posts` (`id`, `title`, `path`, `description`, `content`, `image`, `post_type`, `isActive`, `category_item_id`, `user_id`, `created_at`, `updated_at`, `seo_id`) VALUES
 (2, 'Giới Thiệu', 'gioi-thieu', '<p>\r\n	Giới Thiệu\r\n</p>', '<p>\r\n	Giới Thiệu\r\n</p>', '0', 0, 1, NULL, 1, '2018-08-13 03:00:05', '2018-08-13 03:00:05', 8),
-(3, 'Khách Sạn Mini Đà Nẵng', 'khach-san-mini-da-nang', '<p>\r\n	Khách Sạn Mini Đà Nẵng\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/khachsan/khachsan_mini_danang.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/khachsan/khachsan_mini_danang.jpg', 1, 1, NULL, 1, '2018-08-30 02:40:11', '2018-08-30 03:02:03', 17),
-(4, 'Homestay Hội An', 'homestay-hoi-an', '<p>\r\n	Homestay Hội An\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/homestay/homestay_hoian.jpg', 1, 1, NULL, 1, '2018-08-30 02:55:49', '2018-08-30 02:55:49', 18),
-(5, 'Khách Sạn Mini', 'khach-san-mini', '<p>\r\n	Khách Sạn Mini\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/khachsan/khachsan_mini.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/khachsan/khachsan_mini.jpg', 1, 1, NULL, 1, '2018-08-30 03:17:22', '2018-08-30 03:17:22', 19),
-(6, 'Nhà Phố 3 Tầng 5x20m', 'nha-pho-3-tang-5x20m', '<p>\r\n	Nhà Phố 3 Tầng 5x20m\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/nhapho/nhapho_3_tang_5x20_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:20:13', '2018-08-30 03:20:13', 20),
-(7, 'Nhà Phố 3.7m x 15m', 'nha-pho-37m-x-15m', '<p>\r\n	Nhà Phố 3.7m x 15m\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_2.jpg\" style=\"width: 80%; height: 80%;\"><img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>', 'images/uploads/images/nhapho/nhapho_3m7x15m_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:25:55', '2018-08-30 03:25:55', 21),
-(8, 'Phòng Ngủ Mộc', 'phong-ngu-moc', '<p>\r\n	Phòng Ngủ Mộc\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_4.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/noithatnhao/phongngu_moc_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:29:07', '2018-08-30 03:29:07', 22),
-(9, 'Nội Thất Nhà Phố 3.7m x 14m', 'noi-that-nha-pho-37m-x-14m', '<p>\r\n	Nội Thất Nhà Phố 3.7m x 14m\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_4.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_5.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_6.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_7.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_8.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	&nbsp;\r\n</p>', 'images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:40:36', '2018-08-30 03:40:36', 23),
-(10, 'Nail Minh Thiên Đà Nẵng', 'nail-minh-thien-da-nang', '<p>\r\n	Nail Minh Thiên Đà Nẵng\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_4.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/nail/nail_minh_thien_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:49:14', '2018-08-30 03:49:14', 25),
-(11, 'Villa Hội An', 'villa-hoi-an', '<p>\r\n	Villa Hội An\r\n</p>', '<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_1.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_2.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_3.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>\r\n<p style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_4.jpg\" style=\"width: 80%; height: 80%;\">\r\n</p>', 'images/uploads/images/villa/villa_hoian_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:52:00', '2018-08-30 03:52:00', 26);
+(3, 'Khách Sạn Mini Đà Nẵng', 'khach-san-mini-da-nang', '<p>\r\n	Khách Sạn Mini Đà Nẵng\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/khachsan/khachsan_mini_danang.jpg" style="width: 80%; height: 80%;">\r\n</p>', 'images/uploads/images/khachsan/khachsan_mini_danang.jpg', 1, 1, NULL, 1, '2018-08-30 02:40:11', '2018-08-30 03:02:03', 17),
+(4, 'Homestay Hội An', 'homestay-hoi-an', '<p>\r\n	Homestay Hội An\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian_2.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/homestay/homestay_hoian_3.jpg" style="width: 80%; height: 80%;">\r\n</p>', 'images/uploads/images/homestay/homestay_hoian.jpg', 1, 1, NULL, 1, '2018-08-30 02:55:49', '2018-08-30 02:55:49', 18),
+(5, 'Khách Sạn Mini', 'khach-san-mini', '<p>\r\n	Khách Sạn Mini\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/khachsan/khachsan_mini.jpg" style="width: 80%; height: 80%;">\r\n</p>', 'images/uploads/images/khachsan/khachsan_mini.jpg', 1, 1, NULL, 1, '2018-08-30 03:17:22', '2018-08-30 03:17:22', 19),
+(6, 'Nhà Phố 3 Tầng 5x20m', 'nha-pho-3-tang-5x20m', '<p>\r\n	Nhà Phố 3 Tầng 5x20m\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_1.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_2.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3_tang_5x20_3.jpg" style="width: 80%; height: 80%;">\r\n</p>', 'images/uploads/images/nhapho/nhapho_3_tang_5x20_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:20:13', '2018-08-30 03:20:13', 20),
+(7, 'Nhà Phố 3.7m x 15m', 'nha-pho-37m-x-15m', '<p>\r\n	Nhà Phố 3.7m x 15m\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_2.jpg" style="width: 80%; height: 80%;"><img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_1.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nhapho/nhapho_3m7x15m_3.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>', 'images/uploads/images/nhapho/nhapho_3m7x15m_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:25:55', '2018-08-30 03:25:55', 21),
+(8, 'Phòng Ngủ Mộc', 'phong-ngu-moc', '<p>\r\n	Phòng Ngủ Mộc\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_1.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_2.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_3.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/phongngu_moc_4.jpg" style="width: 80%; height: 80%;">\r\n</p>', 'images/uploads/images/noithatnhao/phongngu_moc_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:29:07', '2018-08-30 03:29:07', 22),
+(9, 'Nội Thất Nhà Phố 3.7m x 14m', 'noi-that-nha-pho-37m-x-14m', '<p>\r\n	Nội Thất Nhà Phố 3.7m x 14m\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_1.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_2.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_3.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_4.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_5.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_6.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_7.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_8.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	&nbsp;\r\n</p>', 'images/uploads/images/noithatnhao/noithatnhapho_3m7x14m_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:40:36', '2018-08-30 03:40:36', 23),
+(10, 'Nail Minh Thiên Đà Nẵng', 'nail-minh-thien-da-nang', '<p>\r\n	Nail Minh Thiên Đà Nẵng\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_1.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_2.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_3.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/nail/nail_minh_thien_4.jpg" style="width: 80%; height: 80%;">\r\n</p>', 'images/uploads/images/nail/nail_minh_thien_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:49:14', '2018-08-30 03:49:14', 25),
+(11, 'Villa Hội An', 'villa-hoi-an', '<p>\r\n	Villa Hội An\r\n</p>', '<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_1.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_2.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_3.jpg" style="width: 80%; height: 80%;">\r\n</p>\r\n<p style="text-align: center;">\r\n	<img alt="" src="http://localhost:8080/opendesign/images/uploads/images/villa/villa_hoian_4.jpg" style="width: 80%; height: 80%;">\r\n</p>', 'images/uploads/images/villa/villa_hoian_1.jpg', 1, 1, NULL, 1, '2018-08-30 03:52:00', '2018-08-30 03:52:00', 26);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -377,7 +376,7 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
@@ -390,7 +389,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
@@ -399,7 +398,7 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role_user`
+-- Table structure for table `role_user`
 --
 
 CREATE TABLE `role_user` (
@@ -408,7 +407,7 @@ CREATE TABLE `role_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `role_user`
+-- Dumping data for table `role_user`
 --
 
 INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
@@ -417,7 +416,7 @@ INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `seos`
+-- Table structure for table `seos`
 --
 
 CREATE TABLE `seos` (
@@ -431,7 +430,7 @@ CREATE TABLE `seos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `seos`
+-- Dumping data for table `seos`
 --
 
 INSERT INTO `seos` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `seo_image`, `created_at`, `updated_at`) VALUES
@@ -460,7 +459,7 @@ INSERT INTO `seos` (`id`, `seo_title`, `seo_description`, `seo_keywords`, `seo_i
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -474,63 +473,63 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'nnduyquang', 'nnduyquang@gmail.com', '$2y$10$mStg572JFNI89/0Cg7TOGOUkACFaBl/nsNeOvx8zglr1qyJPA0tj6', 'RQlsgmk0UzRUeXVHhJrU4TGWGTy5iR8VKE0aFheEnZWSHkCH4moWEjB6Ut2E', '2018-03-14 07:24:10', NULL);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `category_items`
+-- Indexes for table `category_items`
 --
 ALTER TABLE `category_items`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_items_seo_id_foreign` (`seo_id`);
 
 --
--- Chỉ mục cho bảng `category_many`
+-- Indexes for table `category_many`
 --
 ALTER TABLE `category_many`
   ADD PRIMARY KEY (`category_id`,`item_id`);
 
 --
--- Chỉ mục cho bảng `category_permissions`
+-- Indexes for table `category_permissions`
 --
 ALTER TABLE `category_permissions`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `category_permissions_name_unique` (`name`);
 
 --
--- Chỉ mục cho bảng `configs`
+-- Indexes for table `configs`
 --
 ALTER TABLE `configs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `configs_user_id_foreign` (`user_id`);
 
 --
--- Chỉ mục cho bảng `menus`
+-- Indexes for table `menus`
 --
 ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `permissions`
+-- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`),
@@ -538,14 +537,14 @@ ALTER TABLE `permissions`
   ADD KEY `permissions_category_permission_id_foreign` (`category_permission_id`);
 
 --
--- Chỉ mục cho bảng `permission_role`
+-- Indexes for table `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD PRIMARY KEY (`permission_id`,`role_id`),
   ADD KEY `permission_role_role_id_foreign` (`role_id`);
 
 --
--- Chỉ mục cho bảng `posts`
+-- Indexes for table `posts`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
@@ -553,7 +552,7 @@ ALTER TABLE `posts`
   ADD KEY `posts_seo_id_foreign` (`seo_id`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -562,140 +561,129 @@ ALTER TABLE `products`
   ADD KEY `products_seo_id_foreign` (`seo_id`);
 
 --
--- Chỉ mục cho bảng `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
--- Chỉ mục cho bảng `role_user`
+-- Indexes for table `role_user`
 --
 ALTER TABLE `role_user`
   ADD PRIMARY KEY (`user_id`,`role_id`),
   ADD KEY `role_user_role_id_foreign` (`role_id`);
 
 --
--- Chỉ mục cho bảng `seos`
+-- Indexes for table `seos`
 --
 ALTER TABLE `seos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `category_items`
+-- AUTO_INCREMENT for table `category_items`
 --
 ALTER TABLE `category_items`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
 --
--- AUTO_INCREMENT cho bảng `category_permissions`
+-- AUTO_INCREMENT for table `category_permissions`
 --
 ALTER TABLE `category_permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
--- AUTO_INCREMENT cho bảng `configs`
+-- AUTO_INCREMENT for table `configs`
 --
 ALTER TABLE `configs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
--- AUTO_INCREMENT cho bảng `menus`
+-- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT cho bảng `permissions`
+-- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
 --
--- AUTO_INCREMENT cho bảng `posts`
+-- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT cho bảng `roles`
+-- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT cho bảng `seos`
+-- AUTO_INCREMENT for table `seos`
 --
 ALTER TABLE `seos`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- Constraints for dumped tables
+--
 
 --
--- Các ràng buộc cho các bảng đã đổ
---
-
---
--- Các ràng buộc cho bảng `category_items`
+-- Constraints for table `category_items`
 --
 ALTER TABLE `category_items`
   ADD CONSTRAINT `category_items_seo_id_foreign` FOREIGN KEY (`seo_id`) REFERENCES `seos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `configs`
+-- Constraints for table `configs`
 --
 ALTER TABLE `configs`
   ADD CONSTRAINT `configs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `permissions`
+-- Constraints for table `permissions`
 --
 ALTER TABLE `permissions`
   ADD CONSTRAINT `permissions_category_permission_id_foreign` FOREIGN KEY (`category_permission_id`) REFERENCES `category_permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `permission_role`
+-- Constraints for table `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `posts`
+-- Constraints for table `posts`
 --
 ALTER TABLE `posts`
   ADD CONSTRAINT `posts_seo_id_foreign` FOREIGN KEY (`seo_id`) REFERENCES `seos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `posts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_category_product_id_foreign` FOREIGN KEY (`category_product_id`) REFERENCES `category_items` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -703,12 +691,11 @@ ALTER TABLE `products`
   ADD CONSTRAINT `products_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `role_user`
+-- Constraints for table `role_user`
 --
 ALTER TABLE `role_user`
   ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `role_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

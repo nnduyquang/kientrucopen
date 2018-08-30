@@ -55,6 +55,27 @@
                 </div>
             </div>
         @endif
+        @if($cauhinh->name=='config-slider')
+            <div class="form-group">
+                {!! Form::button('Thêm slider', array('id' => 'btnBrowseMore','class'=>'btn btn-primary')) !!}
+            </div>
+            <div class="form-group">
+                <div id="add-image" class="row">
+                    @php
+                        $listImage=explode(';',$cauhinh->content);
+                    @endphp
+                    @if(!IsNullOrEmptyString($cauhinh->content))
+                        @foreach($listImage as $key=>$item)
+                            <div class="col-md-3 text-center one-image">
+                                {{ Html::image($item,'',array('id'=>'showHinh','class'=>'image-choose'))}}
+                                {{ Form::hidden('image-choose[]', $item) }}
+                                <span class='remove-image'>X</span>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        @endif
         @if($cauhinh->name=='config-email')
             <div class=" col-md-12">
                 <div class="form-group">
