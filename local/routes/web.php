@@ -1,9 +1,10 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('frontend.home.index');
-});
+//Route::get('/', function () {
+//    return view('frontend.home.index');
+//});
+Route::get('/', 'FrontendController@getFrontend');
 
 Route::get('/du-an', function () {
     return view('frontend.project.index');
