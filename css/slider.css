@@ -1,0 +1,47 @@
+#slider2 .carousel-item .edit-slide {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+}
+
+#slider2 .carousel-item .edit-slide.slider1, #slider2 .carousel-item .edit-slide.slider2, #slider2 .carousel-item .edit-slide.slider3 {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  -webkit-animation: zoomin 15s ease-in infinite;
+          animation: zoomin 15s ease-in infinite;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+@-webkit-keyframes zoomin {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes zoomin {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+/*End of Zoom in Keyframes */

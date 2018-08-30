@@ -1,0 +1,132 @@
+#d_1 {
+  background-color: #212121;
+  padding-top: 68px;
+  padding-bottom: 68px;
+  color: white;
+  h3 {
+    position: relative;
+    font-size: 22px;
+    span {
+      /*font-size: 26px;*/
+      color: #edb50c;
+    }
+  }
+  #post_lq {
+    .tag-lienquan {
+      a {
+        color: white;
+        font-size: 13px;
+        padding: 16px 5px;
+        position: relative;
+        transition: .3s;
+        &:hover {
+          color: #edb50c;
+        }
+        &:before {
+          content: '#';
+          font-family: 'Font Awesome\ 5 Free';
+          font-weight: 900;
+          position: absolute;
+          left: -3px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: #edb50c;
+          font-size: 12px;
+          font-style: normal;
+
+        }
+      }
+      float: left;
+      margin: 3px 5px;
+      /*border: 2px solid white;*/
+      border-radius: 20px;
+      /*padding: 10px 0px;*/
+    }
+    p {
+      padding-left: 20px;
+      font-size: 12px;
+    }
+    h5 {
+      padding-left: 20px;
+      font-size: 15px;
+      padding-bottom: 6px;
+      a {
+        color: #edb50c;
+        transition: .3s;
+        &:hover {
+          color: #b6a338;
+        }
+      }
+    }
+    .over-lay {
+      width: 108px;
+      height: 68px;
+      border: 3px solid whitesmoke;
+      position: relative;
+      /*overflow: hidden;*/
+      &:hover .img-overlay {
+        top: 0;
+        left: 0;
+      }
+      .img-overlay {
+        width: 100%;
+        height: 100%;
+        background-position: center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        position: absolute;
+        top: 6%;
+        left: 6%;
+        z-index: 1;
+        transition: .3s;
+      }
+    }
+    h3 {
+
+      &:before {
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 38px;
+        transform: skewX(25deg);
+        background-color: #edb50c;
+        bottom: -10px;
+      }
+      &:after {
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 68px;
+        transform: skewX(25deg);
+        background-color: white;
+        bottom: -10px;
+        left: 42px;
+      }
+    }
+  }
+  span.sm-title {
+    font-size: 13px;
+    color: #b3b2ae;
+  }
+  p {
+    font-size: 15px;
+    line-height: 20px;
+    span {
+      color: #edb50c;
+    }
+  }
+  #owl_project {
+    .owl-items {
+      width: 208px;
+      height: 138px;
+      overflow: hidden;
+      background-position: center center;
+      -webkit-background-size: cover;
+      background-size: cover;
+      margin: auto;
+    }
+  }
+
+}
+
+

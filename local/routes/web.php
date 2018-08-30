@@ -4,6 +4,25 @@
 Route::get('/', function () {
     return view('frontend.home.index');
 });
+
+Route::get('/du-an', function () {
+    return view('frontend.project.index');
+});
+
+Route::get('/gioi-thieu', function () {
+    return view('frontend.about-us.index');
+});
+
+Route::get('/lien-he', function () {
+    return view('frontend.contact.index');
+});
+
+
+Route::get('/chi-tiet-du-an.html', function () {
+    return view('frontend.details.index');
+});
+
+
 Route::post('/tim-kiem','FrontendController@getSearch')->name('search');
 
 
