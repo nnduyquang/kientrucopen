@@ -11,6 +11,7 @@
                 <a class="nav-link" id="procjec-{{$item->id}}-tab" data-toggle="tab" href="#project{{$item->id}}"
                    role="tab"
                    aria-controls="profile" aria-selected="false">{{$item->name}}</a>
+                <div></div>
             </li>
         @endforeach
         {{--<li class="nav-item">--}}
@@ -48,11 +49,21 @@
                                  style="background-image:url({{URL::asset($item2->image)}});">
 
                             </div>
-                            <a href="">{{$item2->title}}
+
+                            <style>
+
+                            </style>
+                            <a class="title_pro" href="">{{$item2->title}}
                             </a>
+                            <div class="nav-btn d-flex">
+                                <i class="fas fa-search"></i>
+                                <div class="xem-chitiet ml-2 text-center"><a href="">CHI TIẾT</a></div>
+                            </div>
                         </div>
                     @endforeach
                 @endforeach
+
+
                 {{--<div class="col-md-3 p-0 col-sm-4 col-6 du-an">--}}
                     {{--<div class="du-an-overlay"--}}
                          {{--style="background-image: url({{URL::asset('images/project/a2-700x466.jpg')}});">--}}

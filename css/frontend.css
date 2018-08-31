@@ -1167,6 +1167,85 @@ This class is added to the container
   transition: .3s;
 }
 
+#h_4 .tab-content .du-an .nav-btn {
+  position: absolute;
+  z-index: 10;
+  top: calc(50%);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #f5d314;
+}
+
+#h_4 .tab-content .du-an .nav-btn i {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px solid #f5d314;
+  text-align: center;
+  line-height: 26px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+  margin-top: 20px;
+  transition: .3s;
+}
+
+#h_4 .tab-content .du-an .nav-btn i:hover {
+  background-color: #f5d314;
+  color: white;
+}
+
+#h_4 .tab-content .du-an .nav-btn .xem-chitiet {
+  min-width: 80px;
+  text-align: center;
+  border: 2px solid #f5d314;
+  border-radius: 16px;
+  position: relative;
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-top: 26px;
+  opacity: 0;
+}
+
+#h_4 .tab-content .du-an .nav-btn .xem-chitiet:hover {
+  min-width: 80px;
+  text-align: center;
+  border: 2px solid #f5d314;
+  background-color: #f5d314;
+  border-radius: 16px;
+  position: relative;
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-top: 26px;
+  opacity: 0;
+}
+
+#h_4 .tab-content .du-an .nav-btn .xem-chitiet:hover a {
+  color: white !important;
+}
+
+#h_4 .tab-content .du-an .nav-btn .xem-chitiet a {
+  position: absolute !important;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 12px !important;
+  top: 50%;
+}
+
+#h_4 .tab-content .du-an:hover .nav-btn i {
+  opacity: 1;
+  margin-top: 0px;
+}
+
+#h_4 .tab-content .du-an:hover .nav-btn .xem-chitiet {
+  margin-top: 0px;
+  opacity: 1;
+}
+
 #h_4 .tab-content .du-an .du-an-overlay {
   width: 100%;
   height: 100%;
@@ -1178,12 +1257,12 @@ This class is added to the container
   position: relative;
 }
 
-#h_4 .tab-content .du-an a {
+#h_4 .tab-content .du-an a.title_pro {
   position: absolute;
   width: 80%;
   text-align: center;
   left: 10%;
-  top: 50%;
+  top: 30%;
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
   z-index: 3;
@@ -1195,18 +1274,18 @@ This class is added to the container
   font-weight: 600;
 }
 
-#h_4 .tab-content .du-an a:hover {
+#h_4 .tab-content .du-an a.title_pro:hover {
   color: white !important;
 }
 
-#h_4 .tab-content .du-an:hover a {
+#h_4 .tab-content .du-an:hover a.title_pro {
   position: absolute;
   width: 80%;
   text-align: center;
   left: 10%;
-  top: 50%;
-  -webkit-transform: translate(0%, -50%);
-          transform: translate(0%, -50%);
+  top: 40%;
+  -webkit-transform: translate(0%, -40%);
+          transform: translate(0%, -40%);
   z-index: 2;
   font-size: 14px;
   color: #f5d314 !important;
