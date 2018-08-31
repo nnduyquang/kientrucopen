@@ -7,4 +7,6 @@ interface FrontendRepositoryInterface
     public function getFrontEndInfo();
 
     public function getFrontend();
+
+    public function getDetailDichVu($path);
 }

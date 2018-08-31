@@ -19,8 +19,11 @@
         <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/page') }}" href="{{ route('page.index') }}"><i class="fa fa-link"></i>
                 <p>Trang</p></a>
         </li>
-        <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/post') }}" href="{{ route('post.index') }}"><i class="fa fa-link"></i>
-                <p>Bài Viết</p></a>
+        <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/post-service') }}" href="{{ route('post-service.index') }}"><i class="fa fa-link"></i>
+                <p>Bài Viết Dịch Vụ</p></a>
+        </li>
+        <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/post-project') }}" href="{{ route('post-project.index') }}"><i class="fa fa-link"></i>
+                <p>Bài Viết Dự Án</p></a>
         </li>
         <li class="nav-item"><a class="nav-link {{ set_active('sml_admin/danh-muc-san-pham') }}" href="{{ route('categoryproduct.index') }}"><i class="fa fa-link"></i>
                 <p>Chuyên Mục Sản Phẩm</p></a>

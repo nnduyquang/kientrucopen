@@ -15,10 +15,17 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, $type)
     {
-        $posts = Post::where('post_type','=',IS_POST)->orderBy('id', 'DESC')->get();
-        return view('backend.admin.post.index', compact('posts'))->with('i', ($request->input('page', 1) - 1) * 5);
+        if ($type == 1) {
+//            $posts = Post::where('post_type', '=', IS_POST)->orderBy('id', 'DESC')->get();
+            $posts = CategoryItem::where('id', 15)->first()->posts()->get();
+            return view('backend.admin.post-service.index', compact('posts'))->with('i', ($request->input('page', 1) - 1) * 5);
+        } else {
+            $posts = CategoryItem::where('id', 15)->first()->posts()->pluck('id')->toArray();
+            $posts = Post::whereNotIn('id', $posts)->get();
+            return view('backend.admin.post-project.index', compact('posts'))->with('i', ($request->input('page', 1) - 1) * 5);
+        }
     }
 
     /**
@@ -26,24 +33,31 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($type)
     {
-        $dd_categorie_posts = CategoryItem::where('type',CATEGORY_POST)->orderBy('order')->get();
-        foreach ($dd_categorie_posts as $key => $data) {
-            if ($data->level == CATEGORY_POST_CAP_1) {
-                $data->name = ' ---- ' . $data->name;
-            } else if ($data->level == CATEGORY_POST_CAP_2) {
-                $data->name = ' --------- ' . $data->name;
-            } else if ($data->level == CATEGORY_POST_CAP_3) {
-                $data->name = ' ------------------ ' . $data->name;
+        $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->orderBy('order')->get();
+        if ($type == 2) {
+            foreach ($dd_categorie_posts as $key => $data) {
+                if ($data->level == CATEGORY_POST_CAP_1) {
+                    $data->name = ' ---- ' . $data->name;
+                } else if ($data->level == CATEGORY_POST_CAP_2) {
+                    $data->name = ' --------- ' . $data->name;
+                } else if ($data->level == CATEGORY_POST_CAP_3) {
+                    $data->name = ' ------------------ ' . $data->name;
+                }
             }
+            $newArray = [];
+            self::showCategoryItemDropDown($dd_categorie_posts, 0, $newArray);
+            $dd_categorie_posts = $newArray;
         }
-        $newArray = [];
-        self::showCategoryItemDropDown($dd_categorie_posts, 0, $newArray);
-        $dd_categorie_posts=$newArray;
 //        $dd_categorie_posts = array_pluck($newArray, 'name', 'id');
-        return view('backend.admin.post.create', compact('roles', 'dd_categorie_posts'));
+        if ($type == 2) {
+            return view('backend.admin.post-project.create', compact('roles', 'dd_categorie_posts'));
+        } else {
+            return view('backend.admin.post-service.create', compact('roles'));
+        }
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -51,27 +65,31 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $type)
     {
         $post = new Post();
-        $seo=new Seo();
+        $seo = new Seo();
         $title = $request->input('title');
         $description = $request->input('description');
         $content = $request->input('content');
-        $listCategory=$request->input('list_category');
+        if ($type == 1) {
+            $listCategory = array(15);
+        } else {
+            $listCategory = $request->input('list_category');
+        }
         $seoTitle = $request->input('seo_title');
         $seoDescription = $request->input('seo_description');
-        $seoKeywords=$request->input('seo_keywords');
-        $seoImage=$request->input('seo-image');
+        $seoKeywords = $request->input('seo_keywords');
+        $seoImage = $request->input('seo-image');
         $isActive = $request->input('post_is_active');
         $image = $request->input('image');
         if ($image) {
             $image = substr($image, strpos($image, 'images'), strlen($image) - 1);
             $post->image = $image;
         }
-        if($seoImage){
+        if ($seoImage) {
             $seoImage = substr($seoImage, strpos($seoImage, 'images'), strlen($seoImage) - 1);
-            $seo->seo_image= $seoImage;
+            $seo->seo_image = $seoImage;
         }
         $categoryItemId = $request->input('parent');
         if (!IsNullOrEmptyString($isActive)) {
@@ -82,21 +100,25 @@ class PostController extends Controller
         if (!IsNullOrEmptyString($description)) {
             $post->description = $description;
         }
-        $seo->seo_title= $seoTitle;
-        $seo->seo_description= $seoDescription;
-        $seo->seo_keywords= $seoKeywords;
+        $seo->seo_title = $seoTitle;
+        $seo->seo_description = $seoDescription;
+        $seo->seo_keywords = $seoKeywords;
 
         $seo->save();
         $post->title = $title;
         $post->path = chuyen_chuoi_thanh_path($title);
         $post->content = $content;
-        $post->category_item_id=$categoryItemId;
+        $post->category_item_id = $categoryItemId;
         $post->post_type = IS_POST;
         $post->user_id = Auth::user()->id;
-        $post->seo_id=$seo->id;
+        $post->seo_id = $seo->id;
         $post->save();
         $post->categoryitems()->attach($listCategory);
-        return redirect()->route('post.index')->with('success', 'Tạo Mới Thành Công Bài Viết');
+        if ($type == 1)
+            return redirect()->route('post-service.index')->with('success', 'Tạo Mới Thành Công Bài Viết');
+        else {
+            return redirect()->route('post-project.index')->with('success', 'Tạo Mới Thành Công Bài Viết');
+        }
     }
 
     /**
@@ -116,10 +138,11 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $type)
     {
         $post = Post::find($id);
-        $dd_categorie_posts = CategoryItem::where('type',CATEGORY_POST)->orderBy('order')->get();
+        if($type==2){
+        $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->orderBy('order')->get();
         foreach ($dd_categorie_posts as $key => $data) {
             if ($data->level == CATEGORY_POST_CAP_1) {
                 $data->name = ' ---- ' . $data->name;
@@ -131,12 +154,12 @@ class PostController extends Controller
         }
         $newArray = [];
         self::showCategoryItemDropDown($dd_categorie_posts, 0, $newArray);
-        $dd_categorie_posts=$newArray;
-//        $dd_categorie_posts = array_pluck($newArray, 'name', 'id');
-//        $dd_categorie_posts = array_map(function ($index, $value) {
-//            return ['index' => $index, 'value' => $value];
-//        }, array_keys($dd_categorie_posts), $dd_categorie_posts);
-        return view('backend.admin.post.edit', compact('post', 'dd_categorie_posts'));
+        $dd_categorie_posts = $newArray;
+        }
+        if ($type == 1)
+            return view('backend.admin.post-service.edit', compact('post'));
+        else
+            return view('backend.admin.post-project.edit', compact('post', 'dd_categorie_posts'));
     }
 
     /**
@@ -146,17 +169,21 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, $type)
     {
         $post = Post::find($id);
         $title = $request->input('title');
         $description = $request->input('description');
         $content = $request->input('content');
-        $listCategory=$request->input('list_category');
+        if ($type == 1) {
+            $listCategory = array(15);
+        } else {
+            $listCategory = $request->input('list_category');
+        }
         $seoTitle = $request->input('seo_title');
         $seoDescription = $request->input('seo_description');
-        $seoKeywords=$request->input('seo_keywords');
-        $seoImage=$request->input('seo-image');
+        $seoKeywords = $request->input('seo_keywords');
+        $seoImage = $request->input('seo-image');
         $isActive = $request->input('post_is_active');
         $image = $request->input('image');
         if ($image) {
@@ -165,9 +192,9 @@ class PostController extends Controller
         } else {
             $post->image = NULL;
         }
-        if($seoImage){
+        if ($seoImage) {
             $seoImage = substr($seoImage, strpos($seoImage, 'images'), strlen($seoImage) - 1);
-            $post->seos->seo_image= $seoImage;
+            $post->seos->seo_image = $seoImage;
         }
         $categoryItemId = $request->input('parent');
         if (!IsNullOrEmptyString($isActive)) {
@@ -186,12 +213,16 @@ class PostController extends Controller
         $post->path = chuyen_chuoi_thanh_path($title);
 
         $post->content = $content;
-        $post->category_item_id=$categoryItemId;
+        $post->category_item_id = $categoryItemId;
         $post->post_type = IS_POST;
         $post->user_id = Auth::user()->id;
         $post->save();
         $post->categoryitems()->sync($listCategory);
-        return redirect()->route('post.index')->with('success', 'Cập Nhật Thành Công Bài Viết');
+        if ($type == 1)
+            return redirect()->route('post-service.index')->with('success', 'Cập Nhật Thành Công Bài Viết');
+        else {
+            return redirect()->route('post-project.index')->with('success', 'Cập Nhật Thành Công Bài Viết');
+        }
     }
 
     /**
@@ -200,17 +231,24 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public
+    function destroy($id, $type)
     {
         $post = Post::find($id);
         $post->seos->delete();
         $post->categoryitems()->detach();
         $post->delete();
-        return redirect()->route('post.index')
-            ->with('success', 'Đã Xóa Thành Công');
+        if ($type == 1)
+            return redirect()->route('post-service.index')
+                ->with('success', 'Đã Xóa Thành Công');
+        else {
+            return redirect()->route('post-project.index')
+                ->with('success', 'Đã Xóa Thành Công');
+        }
     }
 
-    public function showCategoryItemDropDown($dd_categorie_posts, $parent_id = 0, &$newArray)
+    public
+    function showCategoryItemDropDown($dd_categorie_posts, $parent_id = 0, &$newArray)
     {
         foreach ($dd_categorie_posts as $key => $data) {
             if ($data->parent_id == $parent_id) {

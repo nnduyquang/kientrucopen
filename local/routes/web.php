@@ -1,9 +1,7 @@
 <?php
 
 
-//Route::get('/', function () {
-//    return view('frontend.home.index');
-//});
+
 Route::get('/', 'FrontendController@getFrontend');
 
 Route::get('/du-an', function () {
@@ -18,10 +16,12 @@ Route::get('/lien-he', function () {
     return view('frontend.contact.index');
 });
 
+Route::get('/dich-vu/{path}', 'FrontendController@getDetailDichVu');
 
-Route::get('/chi-tiet-du-an.html', function () {
-    return view('frontend.details.index');
-});
+
+//Route::get('/chi-tiet-du-an.html', function () {
+//    return view('frontend.details.index');
+//});
 
 
 Route::post('/tim-kiem','FrontendController@getSearch')->name('search');
@@ -64,14 +64,23 @@ Route::group(['middleware' => ['auth']], function () {
     Route::patch('sml_admin/danh-muc-bai-viet/{id}', ['as' => 'categorypost.update', 'uses' => 'CategoryPostController@update', 'middleware' => ['permission:page-edit']]);
     Route::delete('sml_admin/danh-muc-bai-viet/{id}', ['as' => 'categorypost.destroy', 'uses' => 'CategoryPostController@destroy', 'middleware' => ['permission:page-delete']]);
 
-    //POST
-    Route::get('sml_admin/post', ['as' => 'post.index', 'uses' => 'PostController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);
-    Route::post('sml_admin/post/create', ['as' => 'post.store', 'uses' => 'PostController@store', 'middleware' => ['permission:post-create']]);
-    Route::post('sml_admin/post', ['as' => 'post.search', 'uses' => 'PostController@search']);
-    Route::get('sml_admin/post/create', ['as' => 'post.create', 'uses' => 'PostController@create', 'middleware' => ['permission:post-create']]);
-    Route::get('sml_admin/post/{id}/edit', ['as' => 'post.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']]);
-    Route::patch('sml_admin/post/{id}', ['as' => 'post.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']]);
-    Route::delete('sml_admin/post/{id}', ['as' => 'post.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:post-delete']]);
+    //POST - SERVICE
+    Route::get('sml_admin/post-service', ['as' => 'post-service.index', 'uses' => 'PostController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']])->defaults('type','1');
+    Route::post('sml_admin/post-service/create', ['as' => 'post-service.store', 'uses' => 'PostController@store', 'middleware' => ['permission:post-create']])->defaults('type','1');
+    Route::post('sml_admin/post-service', ['as' => 'post-service.search', 'uses' => 'PostController@search']);
+    Route::get('sml_admin/post-service/create', ['as' => 'post-service.create', 'uses' => 'PostController@create', 'middleware' => ['permission:post-create']])->defaults('type','1');
+    Route::get('sml_admin/post-service/{id}/edit', ['as' => 'post-service.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']])->defaults('type','1');
+    Route::patch('sml_admin/post-service/{id}', ['as' => 'post-service.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']])->defaults('type','1');
+    Route::delete('sml_admin/post-service/{id}', ['as' => 'post-service.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:post-delete']])->defaults('type','1');
+
+    //POST - PROJECT
+    Route::get('sml_admin/post-project', ['as' => 'post-project.index', 'uses' => 'PostController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']])->defaults('type','2');
+    Route::post('sml_admin/post-project/create', ['as' => 'post-project.store', 'uses' => 'PostController@store', 'middleware' => ['permission:post-create']])->defaults('type','2');
+    Route::post('sml_admin/post-project', ['as' => 'post-project.search', 'uses' => 'PostController@search']);
+    Route::get('sml_admin/post-project/create', ['as' => 'post-project.create', 'uses' => 'PostController@create', 'middleware' => ['permission:post-create']])->defaults('type','2');
+    Route::get('sml_admin/post-project/{id}/edit', ['as' => 'post-project.edit', 'uses' => 'PostController@edit', 'middleware' => ['permission:post-edit']])->defaults('type','2');
+    Route::patch('sml_admin/post-project/{id}', ['as' => 'post-project.update', 'uses' => 'PostController@update', 'middleware' => ['permission:post-edit']])->defaults('type','2');
+    Route::delete('sml_admin/post-project/{id}', ['as' => 'post-project.destroy', 'uses' => 'PostController@destroy', 'middleware' => ['permission:post-delete']])->defaults('type','2');
 
     //CATEGORY PRODUCT
     Route::get('sml_admin/danh-muc-san-pham', ['as' => 'categoryproduct.index', 'uses' => 'CategoryProductController@index', 'middleware' => ['permission:page-list|page-create|page-edit|page-delete']]);

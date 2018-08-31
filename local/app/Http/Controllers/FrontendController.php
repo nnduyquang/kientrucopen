@@ -19,6 +19,10 @@ class FrontendController extends Controller
         $data = $this->frontendRepository->getFrontend();
         return view('frontend.home.index', compact('data'));
     }
+    public function getDetailDichVu($path){
+        $data = $this->frontendRepository->getDetailDichVu($path);
+        return view('frontend.details.index', compact('data'));
+    }
 
 }
 

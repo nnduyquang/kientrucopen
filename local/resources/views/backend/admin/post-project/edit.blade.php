@@ -14,7 +14,7 @@
                 {{--<h2>Cập Nhật Bài Viết</h2>--}}
             </div>
             <div class="col-md-4 text-right">
-                <a class="btn btn-primary" href="{{ route('post.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('post-project.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
             </ul>
         </div>
     @endif
-    {!! Form::model($post,array('route' => ['post.update',$post->id],'method'=>'PATCH')) !!}
+    {!! Form::model($post,array('route' => ['post-project.update',$post->id],'method'=>'PATCH')) !!}
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6">

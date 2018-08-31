@@ -13,7 +13,7 @@
                 {{--<h2>Tạo Mới Bài Viết</h2>--}}
             </div>
             <div class="col-md-4 text-right">
-                <a class="btn btn-primary" href="{{ route('post.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('post-service.index') }}"> Back</a>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
             </ul>
         </div>
     @endif
-    {!! Form::open(array('route' => 'post.store','method'=>'POST')) !!}
+    {!! Form::open(array('route' => 'post-service.store','method'=>'POST')) !!}
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-6">
@@ -39,18 +39,18 @@
                 {{--<strong>Chuyên Mục</strong>--}}
                 {{--{!! Form::select('parent',$dd_categorie_posts, null,array('class' => 'form-control')) !!}--}}
                 {{--</div>--}}
-                <div class="form-group">
-                    <strong>Chuyên Mục</strong>
-                    <div class="category-info">
-                        @foreach($dd_categorie_posts as $key=>$item)
-                            <label class="check-container">
-                                {{$item->name}}
-                                {{ Form::checkbox('list_category[]', $item->id, false, array('class' => '')) }}
-                                <span class="check-mark"></span>
-                            </label>
-                        @endforeach
-                    </div>
-                </div>
+                {{--<div class="form-group">--}}
+                    {{--<strong>Chuyên Mục</strong>--}}
+                    {{--<div class="category-info">--}}
+                        {{--@foreach($dd_categorie_posts as $key=>$item)--}}
+                            {{--<label class="check-container">--}}
+                                {{--{{$item->name}}--}}
+                                {{--{{ Form::checkbox('list_category[]', $item->id, false, array('class' => '')) }}--}}
+                                {{--<span class="check-mark"></span>--}}
+                            {{--</label>--}}
+                        {{--@endforeach--}}
+                    {{--</div>--}}
+                {{--</div>--}}
                 <div class="form-group">
                     <strong>Mô Tả Ngắn:</strong>
                     {!! Form::textarea('description',null,array('placeholder' => '','id'=>'description-post','class' => 'form-control','rows'=>'10','style'=>'resize:none')) !!}
