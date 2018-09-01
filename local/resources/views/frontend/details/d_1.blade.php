@@ -40,12 +40,12 @@
                                         <p><a href="">NHÀ NHỎ THIẾT KẾ</a></p>
                                         </div>
 
-                                        <div class="owl-items-1">
-                                            <div class="img-bg" style="background-image:url({{URL::asset($item2->image)}});">
+                                        {{--<div class="owl-items-1">--}}
+                                            {{--<div class="img-bg" style="background-image:url({{URL::asset($item2->image)}});">--}}
 
-                                            </div>
-                                            <p><a href="">NHÀ NHỎ THIẾT KẾ</a></p>
-                                        </div>
+                                            {{--</div>--}}
+                                            {{--<p><a href="">NHÀ NHỎ THIẾT KẾ</a></p>--}}
+                                        {{--</div>--}}
 
                                     </div>
                                 @endforeach
