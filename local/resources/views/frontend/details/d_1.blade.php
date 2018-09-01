@@ -19,7 +19,46 @@
                             @endforeach
                         </div>
                     </div>
+
                 </div>
+
+                <style>
+
+                </style>
+
+                <div class="row mt-4 mb-lg-1 mb-5">
+                    <div class="col-12">
+                        <div id="owl_project2" class="owl-carousel owl-theme">
+                            @foreach($data['post']->project()->get() as $key=>$item)
+                                @foreach($item->posts()->get() as $key2=>$item2)
+                                    <div class="owl-items d-flex flex-column">
+
+                                        <div class="owl-items-1">
+                                        <div class="img-bg" style="background-image:url({{URL::asset($item2->image)}});">
+
+                                        </div>
+                                        <p><a href="">NHÀ NHỎ THIẾT KẾ</a></p>
+                                        </div>
+
+                                        <div class="owl-items-1">
+                                            <div class="img-bg" style="background-image:url({{URL::asset($item2->image)}});">
+
+                                            </div>
+                                            <p><a href="">NHÀ NHỎ THIẾT KẾ</a></p>
+                                        </div>
+
+                                    </div>
+                                @endforeach
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
 
 
             </div>

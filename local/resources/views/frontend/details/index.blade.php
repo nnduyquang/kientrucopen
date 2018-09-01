@@ -29,9 +29,8 @@
 @stop
 
 @section('jv-scripts')
+
     {{ Html::script('js/fe.common.partner.js') }}
     {{ Html::script('js/fe.details.js') }}
-
-
 
 @stop

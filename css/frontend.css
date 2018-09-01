@@ -2009,6 +2009,103 @@ This class is added to the container
   margin: auto;
 }
 
+#d_1 #owl_project2 .owl-items {
+  position: relative;
+  width: 208px;
+  height: auto;
+  overflow: hidden;
+  margin: auto;
+  -webkit-transition: .3s;
+  transition: .3s;
+  z-index: 1;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1 {
+  position: relative;
+  width: 208px;
+  height: 138px;
+  overflow: hidden;
+  margin: auto;
+  -webkit-transition: .3s;
+  transition: .3s;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1 .img-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
+  background-position: center center;
+  background-size: cover;
+  z-index: 1;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1 p {
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  position: absolute;
+  text-align: center;
+  left: 10%;
+  top: 50%;
+  width: 80%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 13;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1 p a {
+  color: #edb50c;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1:before {
+  position: absolute;
+  content: '';
+  top: 2%;
+  left: 2%;
+  width: 96%;
+  height: 96%;
+  border: 2px dashed #edb50c;
+  z-index: 11;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1:hover:before {
+  opacity: 1;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1:hover:after {
+  opacity: 1;
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1:hover .img-bg {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#d_1 #owl_project2 .owl-items .owl-items-1:hover p {
+  opacity: 1;
+}
+
 #p_1 {
   background-size: cover;
   background-color: #515151;
