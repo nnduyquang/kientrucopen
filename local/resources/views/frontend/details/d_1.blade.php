@@ -10,23 +10,13 @@
                 <div class="row mt-4 mb-lg-1 mb-5">
                     <div class="col-12">
                         <div id="owl_project" class="owl-carousel owl-theme">
-                            @for ($i = 0; $i < 3; $i++)
-                                @if($i==0)
+                            @foreach($data['post']->project()->get() as $key=>$item)
+                                @foreach($item->posts()->get() as $key2=>$item2)
                                     <div class="owl-items"
-                                         style="background-image:url({{URL::asset('images/2-2-768x512.jpg')}});">
-
+                                         style="background-image:url({{URL::asset($item2->image)}});">
                                     </div>
-                                @elseif($i==1)
-                                    <div class="owl-items"
-                                         style="background-image:url({{URL::asset('images/v1-Hoan-thien-768x462.jpg')}});">
-
-                                    </div>
-                                @else
-                                    <div class="owl-items"
-                                         style="background-image:url({{URL::asset('images/v5-hoan-thien-700x466.jpg')}});">
-                                    </div>
-                                @endif
-                            @endfor
+                                @endforeach
+                            @endforeach
                         </div>
                     </div>
                 </div>

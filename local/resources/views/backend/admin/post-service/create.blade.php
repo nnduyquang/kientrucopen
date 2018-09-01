@@ -66,6 +66,18 @@
                 <div class="form-group">
                     {{ Html::image('','',array('id'=>'showHinhPost','class'=>'show-image'))}}
                 </div>
+                <div class="form-group">
+                    <strong>Sản Phẩm Liên Quan</strong>
+                    <div class="category-info">
+                        @foreach($dd_categorie_posts as $key=>$item)
+                            <label class="check-container">
+                                {{$item->name}}
+                                {{ Form::checkbox('list_product[]', $item->id, false, array('class' => '')) }}
+                                <span class="check-mark"></span>
+                            </label>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-12 p-0">

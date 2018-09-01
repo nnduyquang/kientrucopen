@@ -35,8 +35,9 @@ class PostController extends Controller
      */
     public function create($type)
     {
-        $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->orderBy('order')->get();
+
         if ($type == 2) {
+            $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->where('id', '<>', 15)->orderBy('order')->get();
             foreach ($dd_categorie_posts as $key => $data) {
                 if ($data->level == CATEGORY_POST_CAP_1) {
                     $data->name = ' ---- ' . $data->name;
@@ -49,12 +50,10 @@ class PostController extends Controller
             $newArray = [];
             self::showCategoryItemDropDown($dd_categorie_posts, 0, $newArray);
             $dd_categorie_posts = $newArray;
-        }
-//        $dd_categorie_posts = array_pluck($newArray, 'name', 'id');
-        if ($type == 2) {
             return view('backend.admin.post-project.create', compact('roles', 'dd_categorie_posts'));
         } else {
-            return view('backend.admin.post-service.create', compact('roles'));
+            $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->whereNotIn('id', [15, 6])->orderBy('order')->get();
+            return view('backend.admin.post-service.create', compact('roles', 'dd_categorie_posts'));
         }
     }
 
@@ -74,6 +73,7 @@ class PostController extends Controller
         $content = $request->input('content');
         if ($type == 1) {
             $listCategory = array(15);
+            $listProduct=$request->input('list_product');
         } else {
             $listCategory = $request->input('list_category');
         }
@@ -114,6 +114,9 @@ class PostController extends Controller
         $post->seo_id = $seo->id;
         $post->save();
         $post->categoryitems()->attach($listCategory);
+        if($type==1){
+            $post->project()->attach($listProduct);
+        }
         if ($type == 1)
             return redirect()->route('post-service.index')->with('success', 'Tạo Mới Thành Công Bài Viết');
         else {
@@ -141,25 +144,37 @@ class PostController extends Controller
     public function edit($id, $type)
     {
         $post = Post::find($id);
-        if($type==2){
-        $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->orderBy('order')->get();
-        foreach ($dd_categorie_posts as $key => $data) {
-            if ($data->level == CATEGORY_POST_CAP_1) {
-                $data->name = ' ---- ' . $data->name;
-            } else if ($data->level == CATEGORY_POST_CAP_2) {
-                $data->name = ' --------- ' . $data->name;
-            } else if ($data->level == CATEGORY_POST_CAP_3) {
-                $data->name = ' ------------------ ' . $data->name;
+        if ($type == 2) {
+            $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->where('id', '<>', 15)->orderBy('order')->get();
+            foreach ($dd_categorie_posts as $key => $data) {
+                if ($data->level == CATEGORY_POST_CAP_1) {
+                    $data->name = ' ---- ' . $data->name;
+                } else if ($data->level == CATEGORY_POST_CAP_2) {
+                    $data->name = ' --------- ' . $data->name;
+                } else if ($data->level == CATEGORY_POST_CAP_3) {
+                    $data->name = ' ------------------ ' . $data->name;
+                }
             }
-        }
-        $newArray = [];
-        self::showCategoryItemDropDown($dd_categorie_posts, 0, $newArray);
-        $dd_categorie_posts = $newArray;
-        }
-        if ($type == 1)
-            return view('backend.admin.post-service.edit', compact('post'));
-        else
+            $newArray = [];
+            self::showCategoryItemDropDown($dd_categorie_posts, 0, $newArray);
+            $dd_categorie_posts = $newArray;
             return view('backend.admin.post-project.edit', compact('post', 'dd_categorie_posts'));
+        } else {
+            $dd_categorie_posts = CategoryItem::where('type', CATEGORY_POST)->whereNotIn('id', [15, 6])->orderBy('order')->get();
+//            foreach ($dd_categorie_posts as $key => $data) {
+//                if ($data->level == CATEGORY_POST_CAP_1) {
+//                    $data->name = ' ---- ' . $data->name;
+//                } else if ($data->level == CATEGORY_POST_CAP_2) {
+//                    $data->name = ' --------- ' . $data->name;
+//                } else if ($data->level == CATEGORY_POST_CAP_3) {
+//                    $data->name = ' ------------------ ' . $data->name;
+//                }
+//            }
+//            $newArray = [];
+//            self::showCategoryItemDropDown($dd_categorie_posts, 1, $newArray);
+//            $dd_categorie_posts = $newArray;
+            return view('backend.admin.post-service.edit', compact('post', 'dd_categorie_posts'));
+        }
     }
 
     /**
@@ -177,6 +192,7 @@ class PostController extends Controller
         $content = $request->input('content');
         if ($type == 1) {
             $listCategory = array(15);
+            $listProduct=$request->input('list_product');
         } else {
             $listCategory = $request->input('list_category');
         }
@@ -218,6 +234,9 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id;
         $post->save();
         $post->categoryitems()->sync($listCategory);
+        if($type==1){
+            $post->project()->sync($listProduct);
+        }
         if ($type == 1)
             return redirect()->route('post-service.index')->with('success', 'Cập Nhật Thành Công Bài Viết');
         else {
@@ -231,12 +250,14 @@ class PostController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public
-    function destroy($id, $type)
+    public function destroy($id, $type)
     {
         $post = Post::find($id);
         $post->seos->delete();
         $post->categoryitems()->detach();
+        if($type==1){
+            $post->project()->detach();
+        }
         $post->delete();
         if ($type == 1)
             return redirect()->route('post-service.index')
@@ -247,8 +268,7 @@ class PostController extends Controller
         }
     }
 
-    public
-    function showCategoryItemDropDown($dd_categorie_posts, $parent_id = 0, &$newArray)
+    public function showCategoryItemDropDown($dd_categorie_posts, $parent_id = 0, &$newArray)
     {
         foreach ($dd_categorie_posts as $key => $data) {
             if ($data->parent_id == $parent_id) {

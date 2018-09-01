@@ -79,6 +79,26 @@
                         {{ Html::image('','',array('id'=>'showHinhPost','class'=>'show-image'))}}
                     @endif
                 </div>
+                <div class="form-group">
+                    <strong>Sản Phẩm Liên Quan</strong>
+                    <div class="category-info">
+                        @php
+                            $arrayCategoryItem=$post->project()->get();
+                        @endphp
+                        @foreach($dd_categorie_posts as $key=>$item)
+                            <label class="check-container">
+                                {{$item->name}}
+                                @if(in_array($item->id,explode(',',$arrayCategoryItem->implode('id',','))))
+                                    {{ Form::checkbox('list_product[]', $item->id, true, array('class' => '')) }}
+                                    <span class="check-mark"></span>
+                                @else
+                                    {{ Form::checkbox('list_product[]', $item->id, false, array('class' => '')) }}
+                                    <span class="check-mark"></span>
+                                @endif
+                            </label>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-12">
