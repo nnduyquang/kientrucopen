@@ -23,6 +23,10 @@ class FrontendController extends Controller
         $data = $this->frontendRepository->getDetailDichVu($path);
         return view('frontend.details.index', compact('data'));
     }
+    public function getPageDuAn(){
+        $data = $this->frontendRepository->getPageDuAn();
+        return view('frontend.project.index', compact('data'));
+    }
 
 }
 

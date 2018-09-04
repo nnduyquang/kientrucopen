@@ -9,4 +9,6 @@ interface FrontendRepositoryInterface
     public function getFrontend();
 
     public function getDetailDichVu($path);
+
+    public function getPageDuAn();
 }

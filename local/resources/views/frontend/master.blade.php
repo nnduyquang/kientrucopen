@@ -29,12 +29,12 @@
 </header>
 
 <div id="blurrMe">
-    {{--@include('frontend.common.menu.m-menu')--}}
+    @include('frontend.common.menu.m-menu')
     @include('frontend.common.menu.menu')
     @yield('slider')
     @yield('container')
 </div>
-{{--@include('frontend.common.menu.m-sidebar')--}}
+@include('frontend.common.menu.m-sidebar')
 <div class="footer">
     @include('frontend.common.footer')
 </div>
@@ -55,26 +55,26 @@
 @yield('jv-scripts')
 {{--@yield('scripts')--}}
 {{ Html::script('js/scripts.js') }}
-{{--<div class="callback d-lg-none d-md-none">--}}
-    {{--<div class="phone_animation">--}}
-        {{--<div class="phone_animation_circle"></div>--}}
-        {{--<div class="phone_animation_circle_fill"></div>--}}
-        {{--<a href="tel:0962599482" class="phone_animation_circle_fill_img"><i class="fas fa-phone"--}}
-                                                                            {{--aria-hidden="true"></i></a>--}}
-    {{--</div>--}}
-{{--</div>--}}
-{{--<div class="callback d-none d-md-block" style="right: 150px;bottom: -30px;left:inherit">--}}
-    {{--<div class="phone_animation">--}}
-        {{--<div class="phone_animation_circle"></div>--}}
-        {{--<div class="phone_animation_circle_fill"></div>--}}
-        {{--<a href="tel:0962599482" class="phone_animation_circle_fill_img"><i class="fas fa-phone"--}}
-                                                                            {{--aria-hidden="true"></i></a>--}}
-    {{--</div>--}}
-{{--</div>--}}
-{{--<div class="mess_desk_bot d-none d-md-block" style="position: fixed;bottom:40px;right: 0px;">--}}
-    {{--<a href="tel:0962599482" style="display: block;width: 260px;height: 56px;background: url({{URL::to('images/nenhot.png')}}) no-repeat;text-align: center;padding-top: 10px;color:#fff;font-size: 20px;font-family: 'roboto-bold'">--}}
-    {{--</a>--}}
-{{--</div>--}}
+<div class="callback d-lg-none d-md-none">
+    <div class="phone_animation">
+        <div class="phone_animation_circle"></div>
+        <div class="phone_animation_circle_fill"></div>
+        <a href="tel:0905725255" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
+                                                                            aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="callback d-none d-md-block" style="right: 150px;bottom: -30px;left:inherit">
+    <div class="phone_animation">
+        <div class="phone_animation_circle"></div>
+        <div class="phone_animation_circle_fill"></div>
+        <a href="tel:0905725255" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
+                                                                            aria-hidden="true"></i></a>
+    </div>
+</div>
+<div class="mess_desk_bot d-none d-md-block">
+    <a href="tel:0905725255" class="hotline-master"> 0905 725 255
+    </a>
+</div>
 
 
 </body>

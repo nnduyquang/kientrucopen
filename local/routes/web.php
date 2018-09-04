@@ -4,9 +4,10 @@
 
 Route::get('/', 'FrontendController@getFrontend');
 
-Route::get('/du-an', function () {
-    return view('frontend.project.index');
-});
+//Route::get('/du-an', function () {
+//    return view('frontend.project.index');
+//});
+Route::get('/du-an','FrontendController@getPageDuAn');
 
 Route::get('/gioi-thieu', function () {
     return view('frontend.about-us.index');
@@ -19,9 +20,6 @@ Route::get('/lien-he', function () {
 Route::get('/dich-vu/{path}', 'FrontendController@getDetailDichVu');
 
 
-//Route::get('/chi-tiet-du-an.html', function () {
-//    return view('frontend.details.index');
-//});
 
 
 Route::post('/tim-kiem','FrontendController@getSearch')->name('search');

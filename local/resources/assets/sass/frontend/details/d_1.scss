@@ -11,6 +11,12 @@
       color: #edb50c;
     }
   }
+  .description {
+    margin-top: 20px;
+    p, strong {
+      line-height: 1.8;
+    }
+  }
   #post_lq {
     .tag-lienquan {
       a {

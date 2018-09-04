@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2><a href="">TRANG CHỦ </a> > CHI TIẾT TIN TỨC</h2>
+                <h2><a href="">TRANG CHỦ </a> > {{$data['post']->title}}</h2>
                 <p>Thông tin tin tức hoặc các bài liên quan</p>
             </div>
         </div>

@@ -18,7 +18,7 @@
   top: 0;
   height: 100%;
   width: 260px;
-  background: white;
+  background: #2a2a2a;
   -webkit-transition: left 0.3s ease, -webkit-box-shadow 0.3s ease 0.2s;
   transition: left 0.3s ease, box-shadow 0.3s ease 0.2s;
   -webkit-box-shadow: 0.5em 0 0 0 $sub-color, 0.6em 0 0 0 $sub-color;
@@ -81,17 +81,20 @@
   font-size: 16px;
   font-weight: bolder;
   padding: 16px;
-  color: #757575;
+  color: white;
 }
 .sidebar .sidebar-hotline .sidebar-number{
-  color: #1ba8ff;
+  color: #edb50c;
 }
 .sidebar .icon-sidebar{
   width: 56px;
 }
 .sidebar ul li a {
-  color: #757575;
+  color: #edb50c;
   text-decoration: none;
+  i{
+    color: white;
+  }
 }
 .sidebar ul li:hover {
   //background: #17a689;
@@ -99,12 +102,12 @@
 
 }
 .sidebar .background-sidebar{
-  background-image: url(../images/logo/logo_footer.png);
+  background-image: url(../images/logo/open-logo.png);
   height: calc(56px*4);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  background-color: white;
+  background-color: #2a2a2a;
 }
 .footer a {
   color: #17a689;

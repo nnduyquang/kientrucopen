@@ -269,13 +269,13 @@ img {
   top: 0;
   height: 100%;
   width: 260px;
-  background: white;
+  background: #2a2a2a;
   -webkit-transition: left 0.3s ease, -webkit-box-shadow 0.3s ease 0.2s;
   transition: left 0.3s ease, -webkit-box-shadow 0.3s ease 0.2s;
   transition: left 0.3s ease, box-shadow 0.3s ease 0.2s;
   transition: left 0.3s ease, box-shadow 0.3s ease 0.2s, -webkit-box-shadow 0.3s ease 0.2s;
-  -webkit-box-shadow: 0.5em 0 0 0 #f2b142, 0.6em 0 0 0 #f2b142;
-  box-shadow: 0.5em 0 0 0 #f2b142, 0.6em 0 0 0 #f2b142;
+  -webkit-box-shadow: 0.5em 0 0 0 #edb50c, 0.6em 0 0 0 #edb50c;
+  box-shadow: 0.5em 0 0 0 #edb50c, 0.6em 0 0 0 #edb50c;
 }
 
 .sidebar.closed {
@@ -332,11 +332,11 @@ img {
   font-size: 16px;
   font-weight: bolder;
   padding: 16px;
-  color: #757575;
+  color: white;
 }
 
 .sidebar .sidebar-hotline .sidebar-number {
-  color: #1ba8ff;
+  color: #edb50c;
 }
 
 .sidebar .icon-sidebar {
@@ -344,17 +344,21 @@ img {
 }
 
 .sidebar ul li a {
-  color: #757575;
+  color: #edb50c;
   text-decoration: none;
 }
 
+.sidebar ul li a i {
+  color: white;
+}
+
 .sidebar .background-sidebar {
-  background-image: url(../images/logo/logo_footer.png);
+  background-image: url(../images/logo/open-logo.png);
   height: calc(56px*4);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  background-color: white;
+  background-color: #2a2a2a;
 }
 
 .footer a {
@@ -395,6 +399,25 @@ This class is added to the container
   }
 }
 
+.mess_desk_bot {
+  position: fixed;
+  bottom: 58px;
+  right: 27px;
+  z-index: 2;
+}
+
+.mess_desk_bot a.hotline-master {
+  border-top: 2px #111 solid;
+  background-color: #edb50c;
+  color: white;
+  padding: 7px;
+  border-radius: 12px;
+  padding-left: 70px;
+  padding-right: 20px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
 #menu #menu_top {
   background-color: #F2F2F2;
 }
@@ -428,7 +451,7 @@ This class is added to the container
 
 #menu #menu_top ul.menu-search li a {
   padding: 15px;
-  background-color: #f2b142;
+  background-color: #edb50c;
   color: #fff;
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -451,7 +474,7 @@ This class is added to the container
 }
 
 #menu #menu_bottom .is_active {
-  background-color: #f2b142;
+  background-color: #edb50c;
 }
 
 #menu #menu_bottom ul.main_menu {
@@ -478,7 +501,7 @@ This class is added to the container
 }
 
 #menu #menu_bottom ul.main_menu li:hover {
-  background-color: #f2b142;
+  background-color: #edb50c;
 }
 
 #menu #menu_bottom ul.main_menu li.has-item-down {
@@ -490,7 +513,7 @@ This class is added to the container
   position: absolute;
   opacity: 0;
   display: none;
-  background-color: #f2b142;
+  background-color: #edb50c;
   top: 100%;
   left: 0;
   z-index: 9;
@@ -542,7 +565,7 @@ This class is added to the container
 
 #menu #menu_bottom ul.main_menu ul.menu-search li.li-search a {
   padding: 16px;
-  background-color: #f2b142;
+  background-color: #edb50c;
   color: #fff;
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -1879,6 +1902,14 @@ This class is added to the container
 #d_1 h3 span {
   /*font-size: 26px;*/
   color: #edb50c;
+}
+
+#d_1 .description {
+  margin-top: 20px;
+}
+
+#d_1 .description p, #d_1 .description strong {
+  line-height: 1.8;
 }
 
 #d_1 #post_lq .tag-lienquan {

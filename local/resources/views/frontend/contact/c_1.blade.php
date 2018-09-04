@@ -64,7 +64,7 @@
                     <div class="col-md-12">
                         <textarea name="" id="" cols="30" rows="16" placeholder="Nội dung..."></textarea>
                     </div>
-                    
+
                     <div class="col-md-12 mt-5 mb-5">
                         <a href="">GỞI THÔNG TIN</a>
                     </div>
@@ -73,10 +73,10 @@
 
             <div class="col-md-6">
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.1434219844!2d106.66764155075165!3d10.80032546166673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175292f37d2e2f5%3A0x35893e7d2ecf390d!2zMjAyYiBIb8OgbmcgVsSDbiBUaOG7pSwgUGjGsOG7nW5nIDksIFTDom4gQsOsbmgsIEjhu5MgQ2jDrSBNaW5oLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1533740884971" width="100%" height="432" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.4078660349696!2d108.21976695077166!3d16.04431104431149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c3b4b81af7%3A0x52e1cf716bae2009!2zMTYgTmd1eeG7hW4gU8ahbiBUcsOgLCBIb8OgIEPGsOG7nW5nIELhuq9jLCBI4bqjaSBDaMOidSwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1536073023750" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
             </div>
-            
+
         </div>
     </div>
 </div>
