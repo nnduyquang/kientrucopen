@@ -354,7 +354,9 @@ img {
 
 .sidebar .background-sidebar {
   background-image: url(../images/logo/open-logo.png);
-  height: calc(56px*4);
+  width: 80%;
+  margin: auto;
+  height: calc(50px*4);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
