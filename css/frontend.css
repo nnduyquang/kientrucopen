@@ -1202,7 +1202,8 @@ This class is added to the container
   color: #f5d314;
 }
 
-#h_4 .tab-content .du-an .nav-btn i {
+#h_4 .tab-content .du-an .nav-btn a.fancybox i {
+  float: left;
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -1216,12 +1217,13 @@ This class is added to the container
   transition: .3s;
 }
 
-#h_4 .tab-content .du-an .nav-btn i:hover {
+#h_4 .tab-content .du-an .nav-btn a.fancybox i:hover {
   background-color: #f5d314;
   color: white;
 }
 
 #h_4 .tab-content .du-an .nav-btn .xem-chitiet {
+  float: right;
   min-width: 80px;
   text-align: center;
   border: 2px solid #f5d314;
@@ -1282,7 +1284,7 @@ This class is added to the container
   position: relative;
 }
 
-#h_4 .tab-content .du-an a.title_pro {
+#h_4 .tab-content .du-an a.title_pro_1 {
   position: absolute;
   width: 80%;
   text-align: center;
@@ -1299,7 +1301,7 @@ This class is added to the container
   font-weight: 600;
 }
 
-#h_4 .tab-content .du-an a.title_pro:hover {
+#h_4 .tab-content .du-an a.title_pro_1:hover {
   color: white !important;
 }
 

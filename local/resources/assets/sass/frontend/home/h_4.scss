@@ -1,4 +1,4 @@
-#h_4{
+#h_4 {
   h3 {
     text-align: center;
     font-size: 24px;
@@ -30,30 +30,30 @@
       color: #edb50c;
     }
   }
-  .nav-tabs{
-  border-bottom: none;
-  width: fit-content;
-  margin: auto;
-  text-align: center;
-  .nav-item a.nav-link {
-    font-size: 13px;
-    margin-right: 1px;
-    border: none;
-    transition: .3s;
+  .nav-tabs {
+    border-bottom: none;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    .nav-item a.nav-link {
+      font-size: 13px;
+      margin-right: 1px;
+      border: none;
+      transition: .3s;
+    }
+    .nav-item a.nav-link.active {
+      color: white !important;
+      background-color: #edb50c;
+      border-radius: 0;
+      border: none;
+    }
+    .nav-item a.nav-link:hover {
+      color: white !important;
+      background-color: #b6a338;
+      border-radius: 0;
+      border: none;
+    }
   }
-  .nav-item a.nav-link.active {
-    color: white !important;
-    background-color: #edb50c;
-    border-radius: 0;
-    border: none;
-  }
-  .nav-item a.nav-link:hover {
-    color: white !important;
-    background-color: #b6a338;
-    border-radius: 0;
-    border: none;
-  }
-}
 
   .btn-xtcdan {
     padding: 10px 20px 8px 20px;
@@ -74,30 +74,42 @@
 
   .tab-content {
     .du-an {
-      .nav-btn{
+      width: 100%;
+      border: 2px solid white;
+      min-height: 168px;
+      overflow: hidden;
+      transition: .3s;
+      cursor: pointer;
+      position: relative;
+      transition: .3s;
+      .nav-btn {
         position: absolute;
         z-index: 10;
         top: calc(50%);
         left: 50%;
         transform: translateX(-50%);
         color: #f5d314;
-        i{
-          height: 30px;
-          width: 30px;
-          border-radius: 50%;
-          border: 2px solid #f5d314;
-          text-align: center;
-          line-height: 26px;
-          transition: .3s;
-          opacity: 0;
-          margin-top: 20px;
-          transition: .3s;
-          &:hover{
-            background-color: #f5d314;
-            color: white;
+        a.fancybox {
+          i {
+            float: left;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            border: 2px solid #f5d314;
+            text-align: center;
+            line-height: 26px;
+            transition: .3s;
+            opacity: 0;
+            margin-top: 20px;
+            transition: .3s;
+            &:hover {
+              background-color: #f5d314;
+              color: white;
+            }
           }
         }
-        .xem-chitiet{
+        .xem-chitiet {
+          float: right;
           min-width: 80px;
           text-align: center;
           border: 2px solid #f5d314;
@@ -106,7 +118,7 @@
           transition: .3s;
           margin-top: 26px;
           opacity: 0;
-          &:hover{
+          &:hover {
             min-width: 80px;
             text-align: center;
             border: 2px solid #f5d314;
@@ -117,40 +129,28 @@
             margin-top: 26px;
             opacity: 0;
           }
-          &:hover a{
-            color: white!important;
+          &:hover a {
+            color: white !important;
           }
-          a{
-            position: absolute!important;
+          a {
+            position: absolute !important;
             width: 100%;
             left: 50%;
             top: 50%;
-            transform: translate(-50%,-50%);
-            font-size: 12px!important;
-            top:50%;
+            transform: translate(-50%, -50%);
+            font-size: 12px !important;
+            top: 50%;
           }
         }
       }
-
-
-      &:hover .nav-btn i{
+      &:hover .nav-btn i {
         opacity: 1;
         margin-top: 0px;
       }
-
-      &:hover .nav-btn .xem-chitiet{
+      &:hover .nav-btn .xem-chitiet {
         margin-top: 0px;
         opacity: 1;
       }
-
-      width: 100%;
-      border: 2px solid white;
-      min-height: 168px;
-      overflow: hidden;
-      transition: .3s;
-      cursor: pointer;
-      position: relative;
-      transition: .3s;
       .du-an-overlay {
         width: 100%;
         height: 100%;
@@ -162,7 +162,7 @@
         position: relative;
       }
 
-      a.title_pro {
+      a.title_pro_1 {
         position: absolute;
         width: 80%;
         text-align: center;
