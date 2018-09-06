@@ -20,19 +20,25 @@
             <div class="row">
                 @foreach($data['categoryPost'] as $key=>$item)
                     @foreach($item->product as $key2=>$item2)
-                        <div class="col-md-3 p-0 col-sm-4 col-6 du-an">
+                        <div class="col-md-3 p-0 col-sm-4 col-6 du-an2">
                             <div class="du-an-overlay"
                                  style="background-image:url({{URL::asset($item2->image)}});">
 
                             </div>
                             <a class="title_pro" href="">{{$item2->title}}
                             </a>
-                            <div class="nav-btn d-flex">
+                            <div class="nav-btn mt-2">
+
                                 <a class="fancybox" data-fancybox="gallery"
                                    href="{{URL::to($item2->image)}}">
-                                    <i class="fas fa-search"></i>
+                                    <i class="fas fa-search">
+                                    </i>
                                 </a>
-                                <div class="xem-chitiet ml-2 text-center"><a href="">CHI TIẾT</a></div>
+
+                                <div class="xem-chitiet d-flex justify-content-center align-items-center ml-2 text-center">
+                                    <a class="chi-tiet" href="">CHI TIẾT</a>
+                                </div>
+
                             </div>
                         </div>
                     @endforeach
