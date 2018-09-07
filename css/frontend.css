@@ -597,6 +597,10 @@ This class is added to the container
   font-size: 16px;
 }
 
+#h_1 p span {
+  color: #edb50c;
+}
+
 #h_1 .btn-instro {
   width: -webkit-fit-content;
   width: -moz-fit-content;

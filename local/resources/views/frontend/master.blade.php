@@ -15,6 +15,7 @@
     <meta property="og:image" content="@yield('image-og')" />
     <meta property="og:description" content="@yield('description')" />
     <link rel="shortcut icon" href="images/icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/icon/favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Fira+Sans|Lalezar|Pacifico|Sawarabi+Gothic" rel="stylesheet">
     {{--<meta property="og:site_name" content="Site Name, i.e. Moz" />--}}
     {{ Html::style('css/core.common.css') }}
