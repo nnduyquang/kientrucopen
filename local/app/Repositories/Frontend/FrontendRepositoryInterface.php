@@ -8,7 +8,9 @@ interface FrontendRepositoryInterface
 
     public function getFrontend();
 
-    public function getDetailDichVu($path);
+    public function getDetailPage($path,$type);
 
     public function getPageDuAn();
+
+    public function getDetailDuAn($path);
 }

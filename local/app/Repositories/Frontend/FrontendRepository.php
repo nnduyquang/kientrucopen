@@ -58,13 +58,33 @@ class FrontendRepository implements FrontendRepositoryInterface
     }
 
 
-    public function getDetailDichVu($path)
+    public function getDetailPage($path,$type)
     {
         $data = [];
         $post = Post::where('path', $path)->first();
-        $order_service=CategoryItem::where('id',15)->first()->posts->where('id','<>',$post->id);
+        switch ($type){
+            case 'dich-vu':
+                $order=CategoryItem::where('id',15)->first()->posts->where('id','<>',$post->id);
+                $data['type'] = 'dich-vu';
+                break;
+            case 'du-an':
+                $order=CategoryItem::where('id',15)->first()->posts;
+                $data['type'] = 'du-an';
+                $item=CategoryItem::where('id',6)->first()->posts->take(9);
+                $data['item'] = $item;
+                break;
+        }
+
         $data['post'] = $post;
-        $data['order_service']=$order_service;
+        $data['order']=$order;
+        return $data;
+
+    }
+    public function getDetailDuAn($path)
+    {
+        $data = [];
+        $post = Post::where('path', $path)->first();
+        $data['post'] = $post;
         return $data;
 
     }

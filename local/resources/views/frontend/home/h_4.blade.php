@@ -36,7 +36,7 @@
                                 </a>
 
                                 <div class="xem-chitiet d-flex justify-content-center align-items-center ml-2 text-center">
-                                    <a class="chi-tiet" href="">CHI TIẾT</a>
+                                    <a class="chi-tiet" href="{{URL::to('du-an/'.$item2->path)}}">CHI TIẾT</a>
                                 </div>
 
                             </div>

@@ -17,7 +17,8 @@ Route::get('/lien-he', function () {
     return view('frontend.contact.index');
 });
 
-Route::get('/dich-vu/{path}', 'FrontendController@getDetailDichVu');
+Route::get('/dich-vu/{path}', 'FrontendController@getDetailPage')->defaults('type','dich-vu');
+Route::get('/du-an/{path}', 'FrontendController@getDetailPage')->defaults('type','du-an');
 
 
 

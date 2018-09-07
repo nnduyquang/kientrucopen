@@ -1,7 +1,3 @@
-<style>
-
-
-</style>
 
 <div class="container-fluid" id="p_1" style="background-image: url({{URL::asset('images/bg/footer-background.jpg')}});">
     <div class="container pb-5">
