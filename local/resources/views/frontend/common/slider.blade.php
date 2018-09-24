@@ -53,6 +53,7 @@
                     {{--</div>--}}
                 </div>
             </div>
+
             {{--<div class="carousel-item">--}}
                 {{--<div class="edit-slide slider3" style="background:url('{{URL::to('images/slider/slider2/slider1.jpg')}}')">--}}
                     {{--{{ Html::image('images/slider/slider2/slider3.jpg','',array('class'=>'main-slider')) }}--}}

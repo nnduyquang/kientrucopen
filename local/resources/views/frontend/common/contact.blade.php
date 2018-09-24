@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-md-3 text-center mb-lg-0 mb-4">
                 <i class="fas fa-map-marker-alt pb-4"></i>
-                <p><span>ĐỊA CHỈ:</span> 16 Nguyễn Sơn Trà, Phường Hòa Cường Bắc, Quận Hải Châu, TP .Đà Nẵng</p>
+                <p><span>ĐỊA CHỈ:</span> 104 Lê Lai, Quận Hải Châu, TP .Đà Nẵng</p>
             </div>
 
             <div class="col-md-3 text-center  mb-lg-0 mb-4">
@@ -46,13 +46,13 @@
 
             <div class="col-md-3 text-center  mb-lg-0 mb-4">
                 <i class="far fa-envelope pb-4"></i>
-                <p>Congtykientruc.<span>opendesign</span>@gmail.com</p>
+                <p>kientruc<span>open</span>@gmail.com</p>
             </div>
 
             <div class="col-md-3 text-center  mb-lg-0 mb-4">
                 <i class="far fa-clock pb-4"></i>
-                <p><span>Mon - Fri :</span> 9:00 AM - 5:00PM</p>
-                <p><span>Sat</span> 9:00 AM - 2:00PM</p>
+                <p><span>Mon - Fri :</span> 8:00 AM - 5:00PM</p>
+                <p><span>Sat</span> 8:00 AM - 4:00PM</p>
             </div>
         </div>
     </div>
