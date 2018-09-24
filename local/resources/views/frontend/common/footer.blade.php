@@ -121,7 +121,7 @@
                         <li><a href="">TRANG CHỦ</a></li>
                         <li><a href="">DỰ ÁN</a></li>
                         <li><a href="">GIỚI THIỆU</a></li>
-                        <li><a href="">LIỆN HỆ</a></li>
+                        <li><a href="">LIÊN HỆ</a></li>
                     </ul>
                 </div>
 
@@ -144,9 +144,9 @@
     <div id="copy-right">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 pt-3 pb-3 text-center">Copyright © 2017 Designer by <span><a
+                <div class="col-md-12 pt-3 pb-3 text-center">Copyright © 2017 Designed by <span><a
                                 style="color: #0f74a8;font-weight: bold"
-                                href="http://smartlinks.vn">Smarlinks.vn</a></span> . All rights reserved
+                                href="http://smartlinks.vn">Smartlinks.vn</a></span> . All rights reserved
                 </div>
             </div>
         </div>
