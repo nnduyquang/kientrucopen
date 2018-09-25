@@ -62,13 +62,14 @@
 
     <div class="container">
         <div class="row d-flex align-items-center justify-content-between">
-            <div class="col-6 logo">
+            <div class="col-3 logo">
                 <img class="" src="{{URL::asset('images/logo/open-logo.png')}}" alt="">
             </div>
-            <div class="col-6 menu-right text-right">
+            <div class="col-9 menu-right text-right">
                 <ul>
                     <li><a class="{{ request()->is('/') ? 'active' : '/' }}" href="{{URL::asset('/')}}">TRANG CHỦ </a></li>
                     <li><a class="{{ request()->is('*du-an*') ? 'active' : '/' }}" href="{{URL::asset('/du-an')}}">DỰ ÁN </a></li>
+                    <li><a class="{{ request()->is('bao-gia') ? 'active' : '/' }}" href="{{URL::asset('/bao-gia')}}">BÁO GIÁ </a></li>
                     <li><a class="{{ request()->is('gioi-thieu') ? 'active' : '/' }}" href="{{URL::asset('/gioi-thieu')}}">GIỚI THIỆU </a></li>
                     <li><a class="{{ request()->is('lien-he') ? 'active' : '/' }}" href="{{URL::asset('/lien-he')}}">LIÊN HỆ </a></li>
                     <li><a href=""><i class="fas fa-bars"></i></a></li>
