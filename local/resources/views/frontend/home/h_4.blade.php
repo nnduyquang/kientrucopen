@@ -6,6 +6,7 @@
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
                aria-controls="home" aria-selected="true">TẤT CẢ</a>
         </li>
+
         @foreach($data['categoryPost'] as $key=>$item)
             <li class="nav-item">
                 <a class="nav-link" id="procjec-{{$item->id}}-tab" data-toggle="tab" href="#project{{$item->id}}"
@@ -51,13 +52,26 @@
                 <div class="row">
                     @if(count($item->product)!=0)
                         @foreach($item->product as $key2=>$item2)
-                            <div class="col-md-3 p-0 col-sm-4 col-6 du-an">
+                            <div class="col-md-3 p-0 col-sm-4 col-6 du-an2">
                                 <div class="du-an-overlay"
                                      style="background-image: url({{URL::asset($item2->image)}});">
 
                                 </div>
-                                <a href="">{{$item2->title}}
+                                <a class="title_pro" href="">{{$item2->title}}
                                 </a>
+                                <div class="nav-btn mt-2">
+
+                                    <a class="fancybox" data-fancybox="gallery"
+                                       href="{{URL::to($item2->image)}}">
+                                        <i class="fas fa-search">
+                                        </i>
+                                    </a>
+
+                                    <div class="xem-chitiet d-flex justify-content-center align-items-center ml-2 text-center">
+                                        <a class="chi-tiet" href="{{URL::to('du-an/'.$item2->path)}}">CHI TIẾT</a>
+                                    </div>
+
+                                </div>
                             </div>
                         @endforeach
                     @else
