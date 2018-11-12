@@ -4,7 +4,7 @@
   height: 80vh;
 }
 
-#slider2 .carousel-item .edit-slide.slider1, #slider2 .carousel-item .edit-slide.slider2, #slider2 .carousel-item .edit-slide.slider3 {
+#slider2 .carousel-item .edit-slide.slider1, #slider2 .carousel-item .edit-slide.slider2, #slider2 .carousel-item .edit-slide.slider3, #slider2 .carousel-item .edit-slide.slider4 {
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
