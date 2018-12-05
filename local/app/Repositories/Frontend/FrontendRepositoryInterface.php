@@ -13,4 +13,6 @@ interface FrontendRepositoryInterface
     public function getPageDuAn();
 
     public function getDetailDuAn($path);
+
+    public function getBaoGiaPage();
 }

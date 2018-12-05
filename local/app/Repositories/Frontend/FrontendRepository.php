@@ -89,5 +89,13 @@ class FrontendRepository implements FrontendRepositoryInterface
 
     }
 
+    public function getBaoGiaPage()
+    {
+        $data = [];
+        $post = Post::where('path', 'bao-gia')->first();
+        $data['post'] = $post;
+        return $data;
+    }
+
 
 }

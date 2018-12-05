@@ -27,6 +27,10 @@ class FrontendController extends Controller
         $data = $this->frontendRepository->getPageDuAn();
         return view('frontend.project.index', compact('data'));
     }
+    public function getBaoGiaPage(){
+        $data = $this->frontendRepository->getBaoGiaPage();
+        return view('frontend.about-us.index', compact('data'));
+    }
 
 }
 

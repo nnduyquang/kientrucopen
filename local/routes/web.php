@@ -12,6 +12,7 @@ Route::get('/du-an','FrontendController@getPageDuAn');
 Route::get('/gioi-thieu', function () {
     return view('frontend.about-us.index');
 });
+Route::get('/bao-gia', 'FrontendController@getBaoGiaPage');
 
 Route::get('/lien-he', function () {
     return view('frontend.contact.index');
