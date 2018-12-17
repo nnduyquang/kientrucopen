@@ -39,7 +39,7 @@
             <div class="col-md-3 text-center  mb-lg-0 mb-4">
                 <i class="fas fa-phone pb-4" style=""></i>
                 <div class="phone_num">
-                    <p class="pb-2"><span>(+84)</span> 0905 725 255</p>
+                    <p class="pb-2"><span>(+84)</span> 0774.555.552</p>
                     <p><span>(+84)</span> 0905 888 435</p>
                 </div>
             </div>

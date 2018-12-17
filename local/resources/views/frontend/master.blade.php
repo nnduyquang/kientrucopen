@@ -60,7 +60,7 @@
     <div class="phone_animation">
         <div class="phone_animation_circle"></div>
         <div class="phone_animation_circle_fill"></div>
-        <a href="tel:0905725255" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
+        <a href="tel:0774555552" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
                                                                             aria-hidden="true"></i></a>
     </div>
 </div>
@@ -68,12 +68,12 @@
     <div class="phone_animation">
         <div class="phone_animation_circle"></div>
         <div class="phone_animation_circle_fill"></div>
-        <a href="tel:0905725255" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
+        <a href="tel:0774555552" class="phone_animation_circle_fill_img"><i class="fas fa-phone"
                                                                             aria-hidden="true"></i></a>
     </div>
 </div>
 <div class="mess_desk_bot d-none d-md-block">
-    <a href="tel:0905725255" class="hotline-master"> 0905 725 255
+    <a href="tel:0774555552" class="hotline-master"> 0774.555.552
     </a>
 </div>
 

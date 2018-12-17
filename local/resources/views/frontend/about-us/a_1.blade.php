@@ -198,13 +198,13 @@
                         <p class="pb-3"><span>Email:</span> Congtykientrucopendesign@gmail.com</p>
                         <p class="pb-3"><span>Office:</span> 16 Nguyễn Sơn Trà, Phường Hòa Cường Bắc, Quận Hải Châu, TP
                             .Đà Nẵng</p>
-                        <p class="pb-3"><span>Mobile:</span> 0905.725.255 hoặc 0905.888.435</p>
+                        <p class="pb-3"><span>Mobile:</span> 0774.555.552 hoặc 0905.888.435</p>
                     </div>
                 </div>
             @else
                 <div class="col-md-12">
                     <h1 class="pb-4 wow fadeIn">BÁO GIÁ</h1>
-                    {!! $data['post']->description !!}
+                    {!! $data['post']->content !!}
                 </div>
             @endif
 

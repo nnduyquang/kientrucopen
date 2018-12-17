@@ -69,7 +69,7 @@
         <div class="row">
             <div class="col-md-12 d-flex flex-md-row flex-column align-items-center justify-content-lg-between justify-content-center">
                 <h3 class="text-lg-left text-center">KIẾN TẠO KHÔNG GIAN SỐNG TINH TẾ NHẤT</h3>
-                <div class="btn-call"><a href=""><i class="fas fa-phone pr-1"></i> <span>0905.725.255 </span></a></div>
+                <div class="btn-call"><a href=""><i class="fas fa-phone pr-1"></i> <span>0774.555.552 </span></a></div>
             </div>
         </div>
     </div>
